@@ -1,4 +1,6 @@
 import './assets/main.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -14,3 +16,5 @@ app.use(router)
 app.use(vuetify)
 
 app.mount('#app')
+
+import 'bootstrap/dist/js/bootstrap.bundle'
