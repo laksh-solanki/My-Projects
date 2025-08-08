@@ -121,9 +121,9 @@ export default {
 
 .price-tag {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.327);
   color: white;
   padding: 5px 10px;
   border-radius: 5px;

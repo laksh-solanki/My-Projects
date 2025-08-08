@@ -10,133 +10,218 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid text-white py-5">
+  <div class="professional-container">
     <!-- Hero Section -->
-    <div class="container text-center mb-5">
-      <h1 class="display-4 fw-bold">
-        Transform Your Space with Exquisite Flooring Tiles
-      </h1>
-      <p class="lead">
-        Discover a wide range of high-quality tiles for every style and budget.
-      </p>
-      <router-link to="/contact" class="mt-5 d-flex justify-content-center text-decoration-none"><button class="button">
-          Contect Us
-          <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-            <path clip-rule="evenodd"
-              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-              fill-rule="evenodd"></path>
-          </svg>
-        </button>
-      </router-link>
-    </div>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Elevate Your Space with Premium Flooring Solutions
+        </h1>
+        <p class="hero-subtitle">
+          Discover high-quality, durable, and aesthetically pleasing flooring options for every environment.
+        </p>
+        <router-link to="/contact" class="professional-button">
+          Contact Our Experts
+        </router-link>
+      </div>
+    </section>
 
     <!-- Tile Types Section -->
-    <div class="container mb-5">
-      <h2 class="text-center mb-4">Our Popular Tile Collections</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <TileCard imageSrc="/Photos/Til-1.jpeg" title="Ceramic Tiles"
-            description="Durable and versatile, perfect for kitchens and bathrooms." price="$2.50/sq ft" />
-        </div>
-        <div class="col">
-          <TileCard imageSrc="/Photos/Til-2.avif" title="Porcelain Tiles"
-            description="Highly resistant to moisture and stains, ideal for high-traffic areas." price="$3.00/sq ft" />
-        </div>
-        <div class="col">
-          <TileCard imageSrc="/Photos/Til-3.webp" title="Vinyl Tiles"
-            description="Affordable, comfortable underfoot, and easy to maintain." price="$1.75/sq ft" />
-        </div>
+    <section class="tiles-section ">
+      <h2 class="section-title">Our Diverse Flooring Collections</h2>
+      <div class="tiles-grid">
+        <TileCard
+          imageSrc="/Photos/Til-1.jpeg"
+          title="Elegant Ceramic Tiles"
+          description="Versatile and robust, ideal for both residential and commercial applications."
+          price="$2.50/sq ft"
+        />
+        <TileCard
+          imageSrc="/Photos/Til-2.avif"
+          title="Durable Porcelain Tiles"
+          description="Highly resistant to wear and moisture, perfect for high-traffic areas."
+          price="$3.00/sq ft"
+        />
+        <TileCard
+          imageSrc="/Photos/Til-3.webp"
+          title="Comfortable Vinyl Flooring"
+          description="Affordable, easy to maintain, and comfortable underfoot price and design."
+          price="$1.75/sq ft"
+        />
       </div>
-    </div>
+    </section>
 
     <!-- Why Choose Us Section -->
-    <div class="container text-center">
-      <h2 class="mb-4">Why Choose Us?</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Quality Products</h3>
-          <p>We source only the finest tiles from trusted manufacturers.</p>
+    <section class="why-choose-us-section">
+      <h2 class="section-title">Why Partner with Us?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>Uncompromising Quality</h3>
+          <p>We source only the finest materials from reputable global manufacturers.</p>
         </div>
-        <div class="col-md-4">
+        <div class="feature-item">
           <h3>Expert Installation</h3>
-          <p>Our experienced team ensures a flawless finish every time.</p>
+          <p>Our certified professionals ensure a precise and lasting installation.</p>
         </div>
-        <div class="col-md-4">
-          <h3>Customer Satisfaction</h3>
-          <p>Your happiness is our priority, from selection to installation.</p>
+        <div class="feature-item">
+          <h3>Client Satisfaction</h3>
+          <p>Dedicated to exceeding your expectations from selection to project completion.</p>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
-/* Add component-specific styles here */
-.button {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding-block: 1.0rem;
-  padding-inline: 1.7rem;
-  background-color: rgb(0, 0, 0);
-  border-radius: 9999px;
+.professional-container {
+  font-family: 'Roboto', sans-serif; /* Professional, clean font */
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Global Section Styling */
+section {
+  background-color: #2c3e50; /* Dark blue-gray background */
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #e4e8ec; /* Dark blue-gray for titles */
+  font-weight: 700;
+}
+
+/* Hero Section */
+.hero-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  color: #ffff;
-  gap: 10px;
+  text-align: center;
+  min-height: 60vh;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Subtle gradient */
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.hero-title {
+  font-size: 3.8rem;
   font-weight: bold;
-  border: 3px solid #ffffff4d;
-  outline: none;
-  overflow: hidden;
-  font-size: 20px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease-in-out;
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-.button:hover {
-  transform: scale(1.05);
-  border-color: #fff9;
+.professional-button {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background-color: #007bff; /* Primary blue button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.button:hover .icon {
-  transform: translate(4px);
+.professional-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
+/* Tile Types Section */
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(120deg,
-      rgba(255, 255, 255, 0) 30%,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0) 70%);
-  top: 0;
-  left: -100px;
-  opacity: 0.6;
+/* Why Choose Us Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
 }
 
-@keyframes shine {
-  0% {
-    left: -100px;
+.feature-item {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+  color: #007bff;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.feature-item p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
   }
 
-  60% {
-    left: 100%;
+  .hero-subtitle {
+    font-size: 1.2rem;
   }
 
-  to {
-    left: 100%;
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .professional-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .professional-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 </style>
