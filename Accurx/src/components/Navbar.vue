@@ -1,8 +1,8 @@
 <template>
-  <v-app-bar app color="indigo-darken-4" dark>
+  <v-app-bar app color="indigo-darken-4">
     <v-container class="d-flex align-center">
       <v-toolbar-title>
-        <router-link class="navbar-brand" to="/">Accurx</router-link>
+        <router-link class="navbar-brand " to="/"><img src="@/assets/logo2.png" class="w-100" alt="Accurx Logo"></router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="d-none d-md-flex align-center w-75">
