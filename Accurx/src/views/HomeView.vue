@@ -27,7 +27,7 @@ export default {
     </section>
 
     <!-- Tile Types Section -->
-    <section class="tiles-section ">
+    <section class="tiles-section">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <div class="tiles-grid">
         <TileCard
@@ -103,7 +103,7 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 60vh;
+  min-height: 82vh;
   background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Subtle gradient */
   color: #fff;
   border-radius: 8px;
@@ -152,6 +152,10 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-content: center;
+}
+
+.tiles-section{
+  min-height: 82vh;
 }
 
 /* Why Choose Us Section */
