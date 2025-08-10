@@ -152,7 +152,7 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-content: center;
-  align-items: center;
+  align-self: center;
   width: 100%;
 }
 

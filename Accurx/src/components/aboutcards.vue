@@ -29,7 +29,7 @@ export default {
 <template>
   <div>
     <v-hover v-slot="{ isHovering, props }">
-      <v-card class="mx-auto" color="grey-lighten-4 h-100" max-width="400" v-bind="props">
+      <v-card class="mx-auto rounded-4" color="grey-lighten-4" max-width="400" v-bind="props">
         <v-img :aspect-ratio="16 / 9" :src="imageSrc" cover>
           <v-expand-transition>
             <div v-if="isHovering" class="d-flex bg-white v-card--reveal text-h2" style="height: 100%;">
@@ -39,7 +39,7 @@ export default {
         </v-img>
 
         <v-card-text class="pt-6">
-          <div class="text-h4 font-weight-light text-orange mb-2">
+          <div class="text-h4 font-weight-light text-blue mb-2">
             {{ title }}
           </div>
 

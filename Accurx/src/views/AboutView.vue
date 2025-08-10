@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue';
 import aboutcards from '@/components/aboutcards.vue';
 
 defineOptions({
@@ -6,6 +7,17 @@ defineOptions({
   components: {
     aboutcards,
   },
+});
+
+onMounted(() => {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const accordionItem = header.closest('.accordion-item');
+      accordionItem.classList.toggle('active');
+    });
+  });
 });
 </script>
 
@@ -154,7 +166,7 @@ section {
 }
 
 .accordion-header:hover {
-  background-color: #e9e9e9;
+  background-color: #cacaca;
 }
 
 .accordion-header h3 {
@@ -163,18 +175,19 @@ section {
 
 .accordion-header .icon {
   font-size: 1.8rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .accordion-item.active .accordion-header .icon {
-  transform: rotate(45deg);
+  transform: rotate(135deg);
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   padding: 0 1.5rem;
+  margin-top: 10px;
   color: #555;
   font-size: 1rem;
 }
@@ -184,20 +197,6 @@ section {
   /* Adjust as needed */
   padding-bottom: 1.5rem;
 }
-
-/* JavaScript for accordion functionality (to be added to script section) */
-/*
-document.addEventListener('DOMContentLoaded', () => {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const accordionItem = header.closest('.accordion-item');
-      accordionItem.classList.toggle('active');
-    });
-  });
-});
-*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

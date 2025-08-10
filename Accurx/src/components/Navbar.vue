@@ -1,8 +1,10 @@
 <template>
-  <v-app-bar app color="indigo-darken-4">
+  <v-app-bar app color="blue-darken-2" height="70" dark>
     <v-container class="d-flex align-center">
       <v-toolbar-title>
-        <router-link class="navbar-brand " to="/"><img src="@/assets/logo2.png" class="w-100" alt="Accurx Logo"></router-link>
+        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/logo2.png" class="rounded-4 "
+          width="100"
+            alt="Accurx Logo"></router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="d-none d-md-flex align-center w-75">
@@ -77,12 +79,11 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .navbar-brand {
-  color: #ffffff !important;
-  font-family: "Rubik", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
-  margin-right: 2rem;
+  margin-left: 12px;
+ & img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .nav-link {
@@ -91,9 +92,5 @@ export default {
   font-weight: 500;
   margin-right: 1rem;
   text-transform: none;
-}
-
-.router-link-active {
-  color: #0d6efd !important;
 }
 </style>
