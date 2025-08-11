@@ -62,10 +62,9 @@ export default {
 
 <style scoped>
 .card {
-  width: 400px; /* Fixed width */
-  height: 250px; /* Fixed height */
+  width: 100%; /* Fixed width */
+  height: 100%; /* Fixed height */
   overflow: hidden;
-  position: relative;
   display: flex;
   border: none;
   justify-self: center;

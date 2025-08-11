@@ -12,7 +12,7 @@ export default {
 <template>
   <div class="professional-container">
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section container">
       <div class="hero-content">
         <h1 class="hero-title">
           Elevate Your Space with Premium Flooring Solutions
@@ -27,7 +27,7 @@ export default {
     </section>
 
     <!-- Tile Types Section -->
-    <section class="tiles-section">
+    <section class="tiles-section container">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <div class="tiles-grid">
         <TileCard
@@ -52,7 +52,7 @@ export default {
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us-section">
+    <section class="why-choose-us-section container">
       <h2 class="section-title">Why Partner with Us?</h2>
       <div class="features-grid">
         <div class="feature-item">
@@ -76,7 +76,7 @@ export default {
 .professional-container {
   font-family: 'Roboto', sans-serif; /* Professional, clean font */
   min-height: 100vh;
-  padding: 2rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 /* Global Section Styling */
@@ -91,7 +91,7 @@ section {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.9rem;
   color: #e4e8ec; /* Dark blue-gray for titles */
   font-weight: 700;
 }
@@ -149,15 +149,9 @@ section {
 /* Tile Types Section */
 .tiles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
   gap: 2rem;
   justify-content: center;
-  align-self: center;
-  width: 100%;
-}
-
-.tiles-section{
-  min-height: 82vh;
 }
 
 /* Why Choose Us Section */
