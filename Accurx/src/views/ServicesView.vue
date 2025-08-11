@@ -9,12 +9,7 @@
 
     <main class="container mx-auto pb-12">
       <v-row>
-        <v-col
-          v-for="service in services"
-          :key="service.id"
-          cols="12"
-          md="4"
-        >
+        <v-col v-for="service in services" :key="service.id" cols="12" md="4">
           <v-card class="service-card-v2 text-center pa-8" flat outlined>
             <v-icon size="56" class="mb-6" color="teal">{{ service.icon }}</v-icon>
             <h5 class="text-h5 font-weight-medium">{{ service.title }}</h5>
@@ -23,15 +18,10 @@
         </v-col>
       </v-row>
 
-      <section class="why-choose-us-v2 text-center pa-16 mt-8">
+      <section class="why-choose-us-v2 text-center mt-8">
         <h2 class="text-h3 font-weight-light">Why Partner With Us?</h2>
         <v-row class="mt-10">
-          <v-col
-            v-for="feature in features"
-            :key="feature.title"
-            cols="12"
-            md="4"
-          >
+          <v-col v-for="feature in features" :key="feature.title" cols="12" md="4">
             <div class="feature-item pa-4">
               <v-icon size="48" class="mb-4" color="amber">{{ feature.icon }}</v-icon>
               <h3 class="text-h6 font-weight-medium">{{ feature.title }}</h3>
@@ -42,7 +32,7 @@
       </section>
 
       <div class="text-center mt-10">
-        <v-btn large color="teal" dark @click="dialog = true" class="text-h6">Contact Us</v-btn>
+        <v-btn large color="" @click="dialog = true" class=" con-btn">Contact Us</v-btn>
       </div>
 
       <v-dialog v-model="dialog" max-width="500px">
@@ -50,26 +40,11 @@
           <v-card-title class="text-h5 text-center py-4">Let's Talk</v-card-title>
           <v-card-text class="px-8 pb-8">
             <v-form ref="form" v-model="valid">
-              <v-text-field
-                v-model="name"
-                :rules="nameRules"
-                label="Your Name"
-                variant="outlined"
-                required
-              ></v-text-field>
-              <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="Your Email"
-                variant="outlined"
-                required
-              ></v-text-field>
-              <v-textarea
-                v-model="message"
-                label="How can we help?"
-                variant="outlined"
-                required
-              ></v-textarea>
+              <v-text-field v-model="name" :rules="nameRules" label="Your Name" variant="outlined"
+                required></v-text-field>
+              <v-text-field v-model="email" :rules="emailRules" label="Your Email" variant="outlined"
+                required></v-text-field>
+              <v-textarea v-model="message" label="How can we help?" variant="outlined" required></v-textarea>
             </v-form>
           </v-card-text>
           <v-card-actions class="justify-center pb-6">
@@ -158,13 +133,13 @@ export default {
 }
 
 .service-card-v2:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .why-choose-us-v2 {
   background-color: #474747;
   border-radius: 16px;
-  padding: 4rem 0;
+  padding: 3rem;
 }
 
 .feature-item {
@@ -175,5 +150,55 @@ export default {
 
 .feature-item:hover {
   transform: translateY(-8px);
+}
+
+.con-btn {
+  --color: rgb(37,211,102);
+  font-family: inherit;
+  display: inline-block;
+  width: 10em;
+  height: 3.0em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+.con-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.con-btn:hover {
+  color: #fff;
+}
+
+.con-btn:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.9s;
+} 
+
+.con-btn:hover:before {
+  top: -30px;
+  left: -40px;
+}
+
+.con-btn:active::before {
+  background: #3a0ca3;
+  transition: background 0s;
 }
 </style>
