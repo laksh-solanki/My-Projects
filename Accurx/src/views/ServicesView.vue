@@ -25,7 +25,7 @@
             <div class="feature-item pa-4">
               <v-icon size="48" class="mb-4" color="amber">{{ feature.icon }}</v-icon>
               <h3 class="text-h6 font-weight-medium">{{ feature.title }}</h3>
-              <p class="mt-2 text-grey-darken-2">{{ feature.text }}</p>
+              <p class="mt-2 text-blue-grey-lighten-4">{{ feature.text }}</p>
             </div>
           </v-col>
         </v-row>
@@ -36,42 +36,24 @@
       </div>
 
       <v-dialog v-model="dialog" max-width="500px">
-        <v-card>
-          <v-card-title class="text-h5 text-center py-4">Let's Talk</v-card-title>
-          <v-card-text class="px-8 pb-8">
-            <v-form ref="form" v-model="valid">
-              <v-text-field v-model="name" :rules="nameRules" label="Your Name" variant="outlined"
-                required></v-text-field>
-              <v-text-field v-model="email" :rules="emailRules" label="Your Email" variant="outlined"
-                required></v-text-field>
-              <v-textarea v-model="message" label="How can we help?" variant="outlined" required></v-textarea>
-            </v-form>
-          </v-card-text>
-          <v-card-actions class="justify-center pb-6">
-            <v-btn color="teal" dark @click="submit" large>Send Message</v-btn>
-            <v-btn text @click="dialog = false" large>Cancel</v-btn>
-          </v-card-actions>
+        <v-card class="rounded-4">
+          <contactService />
         </v-card>
       </v-dialog>
-
     </main>
   </div>
 </template>
 
 <script>
+import contactService from '@/components/contactservice.vue';
+
 export default {
-  name: "ServicesPageV2",
+  name: "ServicesPage",
+  components: {
+    contactService,
+  },
   data: () => ({
     dialog: false,
-    valid: true,
-    name: '',
-    nameRules: [v => !!v || 'Name is required'],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-    ],
-    message: '',
     services: [
       {
         id: 1,
@@ -108,16 +90,8 @@ export default {
         title: 'Dedicated Support',
         text: 'Our team is always here to help you with any questions or concerns.'
       }
-    ]
+    ],
   }),
-  methods: {
-    submit() {
-      if (this.$refs.form.validate()) {
-        console.log('Form submitted successfully');
-        this.dialog = false;
-      }
-    }
-  }
 };
 </script>
 
@@ -153,7 +127,7 @@ export default {
 }
 
 .con-btn {
-  --color: rgb(37,211,102);
+  --color: rgb(37, 211, 102);
   font-family: inherit;
   display: inline-block;
   width: 10em;
@@ -190,7 +164,7 @@ export default {
   top: 100%;
   left: 100%;
   transition: all 0.9s;
-} 
+}
 
 .con-btn:hover:before {
   top: -30px;
@@ -198,7 +172,7 @@ export default {
 }
 
 .con-btn:active::before {
-  background: #3a0ca3;
+  background: var(--color);
   transition: background 0s;
 }
 </style>
