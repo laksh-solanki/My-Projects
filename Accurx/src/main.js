@@ -18,3 +18,11 @@ app.use(vuetify)
 app.mount('#app')
 
 import 'bootstrap/dist/js/bootstrap.bundle'
+
+let docTitle = document.title;
+window.addEventListener("blur",() => {
+    document.title = "Come back!";
+});
+window.addEventListener("focus",() => {
+    document.title = docTitle;
+});

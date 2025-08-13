@@ -2,7 +2,7 @@
   <v-app-bar app color="blue-darken-2" height="70" dark>
     <v-container class="d-flex align-center">
       <v-toolbar-title>
-        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/logo2.png" class="rounded-4 "
+        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/main_logo.png" class="rounded-4 "
           width="100"
             alt="Accurx Logo"></router-link>
       </v-toolbar-title>
