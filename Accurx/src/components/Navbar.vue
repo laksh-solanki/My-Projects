@@ -13,7 +13,8 @@
           <v-tab to="/services" value="services">Services</v-tab>
           <v-tab to="/contact" value="contact">Contact</v-tab>
         </v-tabs>
-        <search-bar class="w-50"></search-bar>
+        <search-bar width="450"></search-bar>
+        <signin width="10"></signin>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
@@ -42,11 +43,13 @@
 
 <script>
 import SearchBar from "./SearchBar.vue";
+import signin from "./sign_in.vue";
 
 export default {
   name: "AppNavbar",
   components: {
     SearchBar,
+    signin,
   },
   data() {
     return {
