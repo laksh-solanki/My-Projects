@@ -2,17 +2,16 @@
   <v-app-bar app color="blue-darken-2" height="70" dark>
     <v-container class="d-flex align-center">
       <v-toolbar-title>
-        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/main_logo.png" class="rounded-4 "
-          width="100"
+        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/main_logo.png" class="rounded-4 " width="100"
             alt="Accurx Logo"></router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="d-none d-md-flex align-center w-75">
-        <v-tabs v-model="tab" @update:modelValue="$emit('update:tab', $event)" centered>
-          <v-tab value="home">Home</v-tab>
-          <v-tab value="about">About</v-tab>
-          <v-tab value="services">Services</v-tab>
-          <v-tab value="contact">Contact</v-tab>
+        <v-tabs v-model="activeTab" :show-arrows="false" class="w-100">
+          <v-tab to="/" value="home">Home</v-tab>
+          <v-tab to="/about" value="about">About</v-tab>
+          <v-tab to="/services" value="services">Services</v-tab>
+          <v-tab to="/contact" value="contact">Contact</v-tab>
         </v-tabs>
         <search-bar class="w-50"></search-bar>
       </div>
@@ -25,16 +24,16 @@
       <v-list-item>
         <search-bar></search-bar>
       </v-list-item>
-      <v-list-item @click="updateTab('home')">
+      <v-list-item to="/">
         <v-list-item-title>Home</v-list-item-title>
       </v-list-item>
-      <v-list-item @click="updateTab('about')">
+      <v-list-item to="/about">
         <v-list-item-title>About</v-list-item-title>
       </v-list-item>
-      <v-list-item @click="updateTab('services')">
+      <v-list-item to="/services">
         <v-list-item-title>Services</v-list-item-title>
       </v-list-item>
-      <v-list-item @click="updateTab('contact')">
+      <v-list-item to="/contact">
         <v-list-item-title>Contact</v-list-item-title>
       </v-list-item>
     </v-list>
@@ -52,14 +51,25 @@ export default {
   data() {
     return {
       drawer: false,
-      tab: 'home',
+
     };
   },
-  methods: {
-    updateTab(tab) {
-      this.tab = tab;
-      this.$emit('update:tab', tab);
-      this.drawer = false;
+  computed: {
+    activeTab: {
+      get() {
+        return this.$route.path.substring(1) || 'home';
+      },
+      set() { },
+    },
+    isMobile() {
+      return this.$vuetify.display.mdAndDown;
+    },
+  },
+  watch: {
+    isMobile(newVal) {
+      if (!newVal) {
+        this.drawer = false;
+      }
     },
   },
 };
@@ -70,9 +80,18 @@ export default {
 
 .navbar-brand {
   margin-left: 12px;
- & img {
+
+  & img {
     max-width: 100%;
     height: auto;
   }
+}
+
+.nav-link {
+  font-family: "Rubik", sans-serif;
+  color: #fff !important;
+  font-weight: 500;
+  margin-right: 1rem;
+  text-transform: none;
 }
 </style>
