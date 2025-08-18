@@ -20,7 +20,7 @@
                 {{ user.email }}
               </p>
               <v-divider class="my-3"></v-divider>
-              <v-btn variant="text" rounded>
+              <v-btn variant="text" rounded @click="$router.push('/signin')">
                 Edit Account
               </v-btn>
               <v-divider class="my-3"></v-divider>
