@@ -1,20 +1,20 @@
 <script>
 export default {
-  name: "SearchBar",
+  name: 'SearchBar',
   data: () => ({
     loaded: false,
     loading: false,
   }),
   methods: {
     onClick() {
-      this.loading = true;
+      this.loading = true
       setTimeout(() => {
-        this.loading = false;
-        this.loaded = true;
-      }, 2000);
+        this.loading = false
+        this.loaded = true
+      }, 2000)
     },
   },
-};
+}
 </script>
 
 <template>

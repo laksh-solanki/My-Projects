@@ -10,7 +10,7 @@ const showSnackbar = () => {
 }
 
 defineExpose({
-  showSnackbar
+  showSnackbar,
 })
 </script>
 <template>
@@ -18,9 +18,7 @@ defineExpose({
     <v-snackbar v-model="snackbar" color="green" :timeout="timeout">
       {{ text }}
       <template v-slot:actions>
-        <v-btn color="white" variant="text" @click="snackbar = false">
-          Close
-        </v-btn>
+        <v-btn color="white" variant="text" @click="snackbar = false"> Close </v-btn>
       </template>
     </v-snackbar>
   </div>

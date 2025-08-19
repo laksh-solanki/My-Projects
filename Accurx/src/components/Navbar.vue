@@ -2,8 +2,9 @@
   <v-app-bar app color="blue-darken-2" height="70" dark>
     <v-container class="d-flex align-center">
       <v-toolbar-title>
-        <router-link class="navbar-brand w-100" to="/"><img src="@/assets/main_logo.png" class="rounded-4 " width="100"
-            alt="Accurx Logo"></router-link>
+        <router-link class="navbar-brand w-100" to="/"
+          ><img src="@/assets/main_logo.png" class="rounded-4" width="100" alt="Accurx Logo"
+        /></router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="d-none d-md-flex align-center w-75">
@@ -45,11 +46,11 @@
 </template>
 
 <script>
-import SearchBar from "./SearchBar.vue";
-import Profile from "./profile.vue";
+import SearchBar from './SearchBar.vue'
+import Profile from './profile.vue'
 
 export default {
-  name: "AppNavbar",
+  name: 'AppNavbar',
   components: {
     SearchBar,
     Profile,
@@ -57,32 +58,31 @@ export default {
   data() {
     return {
       drawer: false,
-
-    };
+    }
   },
   computed: {
     activeTab: {
       get() {
-        return this.$route.path.substring(1) || 'home';
+        return this.$route.path.substring(1) || 'home'
       },
-      set() { },
+      set() {},
     },
     isMobile() {
-      return this.$vuetify.display.mdAndDown;
+      return this.$vuetify.display.mdAndDown
     },
   },
   watch: {
     isMobile(newVal) {
       if (!newVal) {
-        this.drawer = false;
+        this.drawer = false
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 .navbar-brand {
   margin-left: 12px;
@@ -94,7 +94,7 @@ export default {
 }
 
 .nav-link {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   color: #fff !important;
   font-weight: 500;
   margin-right: 1rem;

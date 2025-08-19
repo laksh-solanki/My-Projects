@@ -1,10 +1,10 @@
 <template>
-  <div 
+  <div
     class="card h-100 bg-dark text-white border-secondary"
     @mouseover="isHovered = true"
     @mouseleave="isHovered = false"
   >
-    <img :src="imageSrc" class="card-img-top" :alt="title">
+    <img :src="imageSrc" class="card-img-top" :alt="title" />
     <div class="card-body">
       <h5 class="card-title" @click="copyTitle(title)">{{ title }}</h5>
       <p class="card-text">{{ description }}</p>
@@ -24,39 +24,42 @@ export default {
   props: {
     imageSrc: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      required: true
+      required: true,
     },
     price: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       showCopiedMessage: false,
-      isHovered: false
-    };
+      isHovered: false,
+    }
   },
   methods: {
     copyTitle(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        this.showCopiedMessage = true;
-        setTimeout(() => {
-          this.showCopiedMessage = false;
-        }, 1500); // Message disappears after 1.5 seconds
-      }).catch(err => {
-        console.error('Failed to copy text: ', err);
-      });
-    }
-  }
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          this.showCopiedMessage = true
+          setTimeout(() => {
+            this.showCopiedMessage = false
+          }, 1500) // Message disappears after 1.5 seconds
+        })
+        .catch((err) => {
+          console.error('Failed to copy text: ', err)
+        })
+    },
+  },
 }
 </script>
 
@@ -144,7 +147,8 @@ export default {
 }
 
 /* Fade transition for copied message */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {

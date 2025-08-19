@@ -32,7 +32,7 @@
       </section>
 
       <div class="text-center mt-10">
-        <v-btn large color="" @click="dialog = true" class=" con-btn">Contact Us</v-btn>
+        <v-btn large color="" @click="dialog = true" class="con-btn">Contact Us</v-btn>
       </div>
 
       <v-dialog v-model="dialog" max-width="500px">
@@ -45,10 +45,10 @@
 </template>
 
 <script>
-import contactService from '@/components/contactservice.vue';
+import contactService from '@/components/contactservice.vue'
 
 export default {
-  name: "ServicesPage",
+  name: 'ServicesPage',
   components: {
     contactService,
   },
@@ -57,42 +57,42 @@ export default {
     services: [
       {
         id: 1,
-        title: "Web Development",
-        description: "Crafting beautiful and functional websites for the modern web.",
-        icon: "mdi-web",
+        title: 'Web Development',
+        description: 'Crafting beautiful and functional websites for the modern web.',
+        icon: 'mdi-web',
       },
       {
         id: 2,
-        title: "Mobile App Development",
-        description: "Building intuitive and powerful mobile experiences for all devices.",
-        icon: "mdi-cellphone",
+        title: 'Mobile App Development',
+        description: 'Building intuitive and powerful mobile experiences for all devices.',
+        icon: 'mdi-cellphone',
       },
       {
         id: 3,
-        title: "UI/UX Design",
-        description: "Designing user-centric interfaces that are both beautiful and easy to use.",
-        icon: "mdi-palette-swatch-outline",
+        title: 'UI/UX Design',
+        description: 'Designing user-centric interfaces that are both beautiful and easy to use.',
+        icon: 'mdi-palette-swatch-outline',
       },
     ],
     features: [
       {
         icon: 'mdi-creation',
         title: 'Creative Solutions',
-        text: 'We think outside the box to find the best solutions for your unique needs.'
+        text: 'We think outside the box to find the best solutions for your unique needs.',
       },
       {
         icon: 'mdi-rocket-launch',
         title: 'Fast Delivery',
-        text: 'We work efficiently to deliver high-quality results on time, every time.'
+        text: 'We work efficiently to deliver high-quality results on time, every time.',
       },
       {
         icon: 'mdi-head-heart-outline',
         title: 'Dedicated Support',
-        text: 'Our team is always here to help you with any questions or concerns.'
-      }
+        text: 'Our team is always here to help you with any questions or concerns.',
+      },
     ],
   }),
-};
+}
 </script>
 
 <style scoped>
@@ -131,7 +131,7 @@ export default {
   font-family: inherit;
   display: inline-block;
   width: 10em;
-  height: 3.0em;
+  height: 3em;
   line-height: 2.5em;
   margin: 20px;
   position: relative;
@@ -147,7 +147,7 @@ export default {
 }
 
 .con-btn:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   background: var(--color);

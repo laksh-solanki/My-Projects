@@ -9,24 +9,21 @@
             </v-avatar>
           </v-btn>
         </template>
-        <v-card>
+        <v-card rounded="4" width="220">
           <v-card-text>
             <div class="mx-auto text-center">
-              <v-avatar color="brown">
-                <span class="text-h5">{{ user.initials }}</span>
+              <v-avatar color="brown" size="large">
+                <span class="text-h6">{{ user.initials }}</span>
               </v-avatar>
-              <h3>{{ user.fullName }}</h3>
+               
+              <h3 class="mt-3">{{ user.fullName }}</h3>
               <p class="text-caption mt-1">
                 {{ user.email }}
               </p>
               <v-divider class="my-3"></v-divider>
-              <v-btn variant="text" rounded @click="$router.push('/signin')">
-                Edit Account
-              </v-btn>
+              <v-btn variant="text" @click="$router.push('/signin')"> Edit Account </v-btn>
               <v-divider class="my-3"></v-divider>
-              <v-btn variant="text" rounded>
-                Disconnect
-              </v-btn>
+              <v-btn variant="text"> Disconnect </v-btn>
             </div>
           </v-card-text>
         </v-card>
@@ -35,9 +32,11 @@
   </v-container>
 </template>
 <script setup>
-const user = {
-  initials: 'JD',
-  fullName: 'John Doe',
-  email: 'john.doe@doe.com',
-}
+import { reactive } from 'vue'
+
+const user = reactive({
+  initials: 'LS',
+  fullName: 'Laksh Solanki',
+  email: 'lakshsolanki848@gmail.com',
+})
 </script>

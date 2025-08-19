@@ -1,12 +1,12 @@
 <script>
-import TileCard from "../components/TileCard.vue";
+import TileCard from '../components/TileCard.vue'
 
 export default {
-  name: "HomePage",
+  name: 'HomePage',
   components: {
     TileCard,
   },
-};
+}
 </script>
 
 <template>
@@ -14,15 +14,12 @@ export default {
     <!-- Hero Section -->
     <section class="hero-section container">
       <div class="hero-content">
-        <h1 class="hero-title">
-          Elevate Your Space with Premium Flooring Solutions
-        </h1>
+        <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
         <p class="hero-subtitle">
-          Discover high-quality, durable, and aesthetically pleasing flooring options for every environment.
+          Discover high-quality, durable, and aesthetically pleasing flooring options for every
+          environment.
         </p>
-        <router-link to="/contact" class="professional-button">
-          Contact Our Experts
-        </router-link>
+        <router-link to="/contact" class="professional-button"> Contact Our Experts </router-link>
       </div>
     </section>
 
@@ -138,7 +135,9 @@ section {
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .professional-button:hover {
@@ -167,7 +166,9 @@ section {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .feature-item:hover {

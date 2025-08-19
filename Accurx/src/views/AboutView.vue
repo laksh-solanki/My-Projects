@@ -1,24 +1,24 @@
 <script setup>
-import { onMounted } from 'vue';
-import aboutcards from '@/components/aboutcards.vue';
+import { onMounted } from 'vue'
+import aboutcards from '@/components/aboutcards.vue'
 
 defineOptions({
   name: 'AboutPage',
   components: {
     aboutcards,
   },
-});
+})
 
 onMounted(() => {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  const accordionHeaders = document.querySelectorAll('.accordion-header')
 
-  accordionHeaders.forEach(header => {
+  accordionHeaders.forEach((header) => {
     header.addEventListener('click', () => {
-      const accordionItem = header.closest('.accordion-item');
-      accordionItem.classList.toggle('active');
-    });
-  });
-});
+      const accordionItem = header.closest('.accordion-item')
+      accordionItem.classList.toggle('active')
+    })
+  })
+})
 </script>
 
 <template>
@@ -33,12 +33,27 @@ onMounted(() => {
     <section class="team-section">
       <h2 class="section-title">Meet Our Leadership Team</h2>
       <div class="cards-grid">
-        <aboutcards imageSrc="/Photos/Til-1.jpeg" title="Elegant floor Ceramic Tiles" description="Chief Executive Officer"
-          stock="In Stock" price="$150,000" />
-        <aboutcards imageSrc="/Photos/Til-2.avif" title="Durable floor Porcelain Tiles" description="Head of Operations"
-          stock="In Stock" price="$120,000" />
-        <aboutcards imageSrc="/Photos/Til-3.webp" title="Comfortable Vinyl Flooring"
-          description="Director of Client" stock="In Stock" price="$130,000" />
+        <aboutcards
+          imageSrc="/Photos/Til-1.jpeg"
+          title="Elegant floor Ceramic Tiles"
+          description="Chief Executive Officer"
+          stock="In Stock"
+          price="$150,000"
+        />
+        <aboutcards
+          imageSrc="/Photos/Til-2.avif"
+          title="Durable floor Porcelain Tiles"
+          description="Head of Operations"
+          stock="In Stock"
+          price="$120,000"
+        />
+        <aboutcards
+          imageSrc="/Photos/Til-3.webp"
+          title="Comfortable Vinyl Flooring"
+          description="Director of Client"
+          stock="In Stock"
+          price="$130,000"
+        />
       </div>
     </section>
 
@@ -51,8 +66,10 @@ onMounted(() => {
             <span class="icon">+</span>
           </div>
           <div class="accordion-content">
-            <p>We uphold the highest standards of integrity in all our actions, fostering trust and transparency with
-              our clients and partners.</p>
+            <p>
+              We uphold the highest standards of integrity in all our actions, fostering trust and
+              transparency with our clients and partners.
+            </p>
           </div>
         </div>
         <div class="accordion-item">
@@ -61,8 +78,10 @@ onMounted(() => {
             <span class="icon">+</span>
           </div>
           <div class="accordion-content">
-            <p>We are committed to delivering products and services of exceptional quality, ensuring durability,
-              performance, and aesthetic appeal.</p>
+            <p>
+              We are committed to delivering products and services of exceptional quality, ensuring
+              durability, performance, and aesthetic appeal.
+            </p>
           </div>
         </div>
         <div class="accordion-item">
@@ -71,8 +90,10 @@ onMounted(() => {
             <span class="icon">+</span>
           </div>
           <div class="accordion-content">
-            <p>Our clients are at the heart of everything we do. We strive to understand their needs and exceed their
-              expectations through personalized solutions and dedicated support.</p>
+            <p>
+              Our clients are at the heart of everything we do. We strive to understand their needs
+              and exceed their expectations through personalized solutions and dedicated support.
+            </p>
           </div>
         </div>
       </div>
@@ -185,7 +206,9 @@ section {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition:
+    max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+    padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   padding: 0 1.5rem;
   margin-top: 10px;
   color: #555;

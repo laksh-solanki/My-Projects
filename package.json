@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "serve": "^14.2.4",
     "vue3-google-oauth2": "^1.0.7"
   }
 }
