@@ -12,19 +12,23 @@ export default {
 <template>
   <div class="professional-container">
     <!-- Hero Section -->
-    <section class="hero-section container">
-      <div class="hero-content">
-        <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
-        <p class="hero-subtitle">
-          Discover high-quality, durable, and aesthetically pleasing flooring options for every
-          environment.
-        </p>
-        <router-link to="/contact" class="professional-button"> Contact Our Experts </router-link>
-      </div>
-    </section>
+    <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" class="rounded-5 sec" height="607">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
+          <p class="hero-subtitle">
+            Discover high-quality, durable, and aesthetically pleasing flooring options for every
+            environment.
+          </p>
+        </div>
+        <router-link to="/contact" class="professional-button">
+          contact us
+        </router-link>
+      </section>
+    </v-parallax>
 
     <!-- Tile Types Section -->
-    <section class="tiles-section container">
+    <section class="tiles-section">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <div class="tiles-grid">
         <TileCard imageSrc="/Photos/Til-1.jpeg" title="Elegant Ceramic Tiles"
@@ -38,7 +42,7 @@ export default {
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us-section container">
+    <section class="why-choose-us-section ">
       <h2 class="section-title">Why Partner with Us?</h2>
       <div class="features-grid">
         <div class="feature-item">
@@ -85,6 +89,10 @@ section {
   font-weight: 700;
 }
 
+.sec {
+  margin-bottom: 40px;
+}
+
 /* Hero Section */
 .hero-section {
   display: flex;
@@ -93,10 +101,11 @@ section {
   justify-content: center;
   text-align: center;
   min-height: 82vh;
-  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background-color: transparent;
   color: #fff;
   border-radius: 8px;
   margin-bottom: 4rem;
+  box-shadow: none;
 }
 
 .hero-content {
@@ -117,28 +126,35 @@ section {
   opacity: 0.9;
 }
 
+/* From Uiverse.io by adamgiebl */
 .professional-button {
+  font-size: 18px;
   display: inline-block;
-  padding: 0.9rem 2.5rem;
-  background-color: #007bff;
-  /* Primary blue button */
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #5fd4f5 0%, #5468FF 100%);
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 12px;
+  border-radius: 0.3em;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
   text-decoration: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+  text-align: center;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .professional-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
 }
 
-/* Tile Types Section */
+.professional-button:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+  transform: translateY(0em);
+}
+
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
