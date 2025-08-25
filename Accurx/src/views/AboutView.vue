@@ -33,27 +33,12 @@ onMounted(() => {
     <section class="team-section">
       <h2 class="section-title">Meet Our Leadership Team</h2>
       <div class="cards-grid">
-        <aboutcards
-          imageSrc="/Photos/Til-1.jpeg"
-          title="Elegant floor Ceramic Tiles"
-          description="Chief Executive Officer"
-          stock="In Stock"
-          price="$150,000"
-        />
-        <aboutcards
-          imageSrc="/Photos/Til-2.avif"
-          title="Durable floor Porcelain Tiles"
-          description="Head of Operations"
-          stock="In Stock"
-          price="$120,000"
-        />
-        <aboutcards
-          imageSrc="/Photos/Til-3.webp"
-          title="Comfortable Vinyl Flooring"
-          description="Director of Client"
-          stock="In Stock"
-          price="$130,000"
-        />
+        <aboutcards imageSrc="/Photos/Til-1.jpeg" title="Elegant floor Ceramic Tiles"
+          description="Chief Executive Officer" stock="In Stock" price="$150,000" />
+        <aboutcards imageSrc="/Photos/Til-2.avif" title="Durable floor Porcelain Tiles" description="Head of Operations"
+          stock="In Stock" price="$120,000" />
+        <aboutcards imageSrc="/Photos/Til-3.webp" title="Comfortable Vinyl Flooring" description="Director of Client"
+          stock="In Stock" price="$130,000" />
       </div>
     </section>
 

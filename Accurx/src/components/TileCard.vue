@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="card h-100 bg-dark text-white border-secondary"
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
-  >
+  <div class="card h-100 bg-dark text-white border-secondary" @mouseover="isHovered = true"
+    @mouseleave="isHovered = false">
     <img :src="imageSrc" class="card-img-top" :alt="title" />
     <div class="card-body">
       <h5 class="card-title" @click="copyTitle(title)">{{ title }}</h5>
@@ -65,8 +62,10 @@ export default {
 
 <style scoped>
 .card {
-  width: 100%; /* Fixed width */
-  height: 100%; /* Fixed height */
+  width: 100%;
+  /* Fixed width */
+  height: 100%;
+  /* Fixed height */
   overflow: hidden;
   display: flex;
   border: none;
@@ -78,7 +77,8 @@ export default {
 .card-img-top {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure image covers the area */
+  object-fit: cover;
+  /* Ensure image covers the area */
   transition: transform 0.3s ease;
 }
 
@@ -91,7 +91,8 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent black background */
   color: white;
   padding: 1rem;
   opacity: 0;
@@ -107,7 +108,8 @@ export default {
   margin-bottom: 0.5rem;
   transform: translateY(20px);
   transition: transform 0.3s ease;
-  cursor: pointer; /* Indicate that the title is clickable */
+  cursor: pointer;
+  /* Indicate that the title is clickable */
 }
 
 .card-text {
@@ -151,7 +153,12 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active in <2.1.8 */
+  {
   opacity: 0;
 }
 </style>

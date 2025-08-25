@@ -27,24 +27,13 @@ export default {
     <section class="tiles-section container">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <div class="tiles-grid">
-        <TileCard
-          imageSrc="/Photos/Til-1.jpeg"
-          title="Elegant Ceramic Tiles"
+        <TileCard imageSrc="/Photos/Til-1.jpeg" title="Elegant Ceramic Tiles"
           description="Versatile and robust, ideal for both residential and commercial applications."
-          price="$2.50/sq ft"
-        />
-        <TileCard
-          imageSrc="/Photos/Til-2.avif"
-          title="Durable Porcelain Tiles"
-          description="Highly resistant to wear and moisture, perfect for high-traffic areas."
-          price="$3.00/sq ft"
-        />
-        <TileCard
-          imageSrc="/Photos/Til-3.webp"
-          title="Comfortable Vinyl Flooring"
-          description="Affordable, easy to maintain, and comfortable underfoot price and design."
-          price="$1.75/sq ft"
-        />
+          price="$2.50/sq ft" />
+        <TileCard imageSrc="/Photos/Til-2.avif" title="Durable Porcelain Tiles"
+          description="Highly resistant to wear and moisture, perfect for high-traffic areas." price="$3.00/sq ft" />
+        <TileCard imageSrc="/Photos/Til-3.webp" title="Comfortable Vinyl Flooring"
+          description="Affordable, easy to maintain, and comfortable underfoot price and design." price="$1.75/sq ft" />
       </div>
     </section>
 
@@ -71,14 +60,16 @@ export default {
 
 <style scoped>
 .professional-container {
-  font-family: 'Roboto', sans-serif; /* Professional, clean font */
+  font-family: 'Roboto', sans-serif;
+  /* Professional, clean font */
   min-height: 100vh;
   padding: 2rem 1rem 1rem 1rem;
 }
 
 /* Global Section Styling */
 section {
-  background-color: #2c3e50; /* Dark blue-gray background */
+  background-color: #2c3e50;
+  /* Dark blue-gray background */
   margin-bottom: 4rem;
   padding: 2rem;
   border-radius: 8px;
@@ -89,7 +80,8 @@ section {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.9rem;
-  color: #e4e8ec; /* Dark blue-gray for titles */
+  color: #e4e8ec;
+  /* Dark blue-gray for titles */
   font-weight: 700;
 }
 
@@ -101,7 +93,7 @@ section {
   justify-content: center;
   text-align: center;
   min-height: 82vh;
-  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Subtle gradient */
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
   color: #fff;
   border-radius: 8px;
   margin-bottom: 4rem;
@@ -128,7 +120,8 @@ section {
 .professional-button {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background-color: #007bff; /* Primary blue button */
+  background-color: #007bff;
+  /* Primary blue button */
   color: #fff;
   border: none;
   border-radius: 5px;

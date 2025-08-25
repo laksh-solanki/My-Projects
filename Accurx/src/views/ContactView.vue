@@ -74,78 +74,53 @@ export default {
             <form>
               <div class="mb-3 position-relative">
                 <label for="name" class="form-label">Your Name</label>
-                <input
-                  type="text"
-                  :class="[
-                    'form-control',
-                    'form-control-dark',
-                    {
-                      'is-invalid': formErrors.name,
-                      'pe-4': !formErrors.name && form.name,
-                    },
-                  ]"
-                  id="name"
-                  v-model="form.name"
-                  required
-                />
+                <input type="text" :class="[
+                  'form-control',
+                  'form-control-dark',
+                  {
+                    'is-invalid': formErrors.name,
+                    'pe-4': !formErrors.name && form.name,
+                  },
+                ]" id="name" v-model="form.name" required />
                 <span v-if="!formErrors.name && form.name" class="success-icon">✓</span>
                 <div class="invalid-feedback">Name is required.</div>
               </div>
               <div class="mb-3 position-relative">
                 <label for="email" class="form-label">Your Email</label>
-                <input
-                  type="email"
-                  :class="[
-                    'form-control',
-                    'form-control-dark',
-                    {
-                      'is-invalid': formErrors.email,
-                      'pe-4': !formErrors.email && form.email,
-                    },
-                  ]"
-                  id="email"
-                  v-model="form.email"
-                  required
-                />
+                <input type="email" :class="[
+                  'form-control',
+                  'form-control-dark',
+                  {
+                    'is-invalid': formErrors.email,
+                    'pe-4': !formErrors.email && form.email,
+                  },
+                ]" id="email" v-model="form.email" required />
                 <span v-if="!formErrors.email && form.email" class="success-icon">✓</span>
                 <div class="invalid-feedback">Email is required.</div>
               </div>
               <div class="mb-3 position-relative">
                 <label for="subject" class="form-label">Subject</label>
-                <input
-                  type="text"
-                  :class="[
-                    'form-control',
-                    'form-control-dark',
-                    {
-                      'is-invalid': formErrors.subject,
-                      'pe-4': !formErrors.subject && form.subject,
-                    },
-                  ]"
-                  id="subject"
-                  v-model="form.subject"
-                  required
-                />
+                <input type="text" :class="[
+                  'form-control',
+                  'form-control-dark',
+                  {
+                    'is-invalid': formErrors.subject,
+                    'pe-4': !formErrors.subject && form.subject,
+                  },
+                ]" id="subject" v-model="form.subject" required />
                 <span v-if="!formErrors.subject && form.subject" class="success-icon">✓</span>
                 <div class="invalid-feedback">Subject is required.</div>
               </div>
               <div class="mb-4 position-relative">
                 <label for="message" class="form-label">Your Message</label>
-                <textarea
-                  :class="[
-                    'form-control',
-                    'form-control-dark',
-                    {
-                      'is-invalid': formErrors.message,
-                      'pe-4': !formErrors.message && form.message,
-                    },
-                  ]"
-                  style="height: 219px"
-                  id="message"
-                  rows="6"
-                  v-model="form.message"
-                  required
-                ></textarea>
+                <textarea :class="[
+                  'form-control',
+                  'form-control-dark',
+                  {
+                    'is-invalid': formErrors.message,
+                    'pe-4': !formErrors.message && form.message,
+                  },
+                ]" style="height: 219px" id="message" rows="6" v-model="form.message" required></textarea>
                 <span v-if="!formErrors.message && form.message" class="success-icon">✓</span>
                 <div class="invalid-feedback">Message is required.</div>
               </div>
@@ -224,31 +199,17 @@ export default {
             <h2 class="mb-4 text-center">Our Location</h2>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2999999999996!2d144.9631!3d-37.814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ4JzQ5LjkiUyAxNDRwrDU3JzQ3LjIiRQ!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
-              width="100%"
-              height="300"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
   <transition name="alert-fade">
-    <div
-      v-if="showAlert"
-      class="alert alert-success alert-dismissible fade show custom-alert"
-      role="alert"
-    >
+    <div v-if="showAlert" class="alert alert-success alert-dismissible fade show custom-alert" role="alert">
       Message sent successfully!
-      <button
-        type="button"
-        class="btn-close"
-        @click="showAlert = false"
-        aria-label="Close"
-      ></button>
+      <button type="button" class="btn-close" @click="showAlert = false" aria-label="Close"></button>
     </div>
   </transition>
 </template>

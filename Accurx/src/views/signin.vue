@@ -2,10 +2,10 @@
   <div class="signin-page">
     <h1>Sign In Page</h1>
     <form class="form mt-5" @submit.prevent="handleSubmit">
-    <span class="input-span">
-      <label for="username" class="label">Username</label>
-      <input type="text" name="username" id="username" v-model="formData.username" />
-    </span>
+      <span class="input-span">
+        <label for="username" class="label">Username</label>
+        <input type="text" name="username" id="username" v-model="formData.username" />
+      </span>
       <span class="input-span">
         <label for="email" class="label">Email</label>
         <input type="email" name="email" id="email" v-model="formData.email" /></span>
@@ -43,11 +43,11 @@ const handleSubmit = () => {
     initials: formData.value.username ? formData.value.username.charAt(0).toUpperCase() : 'U',
     fullName: formData.value.username
   }
-  
+
   // Sign in the user
   authStore.signIn(userData)
   console.log('User signed in:', authStore.user); // Debugging log
-  
+
   // Redirect to home page
   router.push('/')
 }
