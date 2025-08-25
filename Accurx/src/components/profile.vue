@@ -5,7 +5,7 @@
         <template v-slot:activator="{ props }">
           <v-btn icon v-bind="props">
             <v-avatar color="brown" size="large">
-              <span class="text-h5">{{ user.initials }}</span>
+              <span class="text-h5">{{ userInitials }}</span>
             </v-avatar>
           </v-btn>
         </template>
@@ -13,17 +13,17 @@
           <v-card-text>
             <div class="mx-auto text-center">
               <v-avatar color="brown" size="large">
-                <span class="text-h6">{{ user.initials }}</span>
+                <span class="text-h6">{{ userInitials }}</span>
               </v-avatar>
                
-              <h3 class="mt-3">{{ user.fullName }}</h3>
+              <h3 class="mt-3">{{ userName }}</h3>
               <p class="text-caption mt-1">
-                {{ user.email }}
+                {{ userEmail }}
               </p>
               <v-divider class="my-3"></v-divider>
               <v-btn variant="text" @click="$router.push('/signin')"> Edit Account </v-btn>
               <v-divider class="my-3"></v-divider>
-              <v-btn variant="text"> Disconnect </v-btn>
+              <v-btn variant="text" @click="handleSignOut"> Disconnect </v-btn>
             </div>
           </v-card-text>
         </v-card>
@@ -32,11 +32,19 @@
   </v-container>
 </template>
 <script setup>
-import { reactive } from 'vue'
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 
-const user = reactive({
-  initials: 'LS',
-  fullName: 'Laksh Solanki',
-  email: 'lakshsolanki848@gmail.com',
-})
+const router = useRouter()
+const authStore = useAuthStore()
+
+const userInitials = computed(() => authStore.user?.initials || 'U')
+const userName = computed(() => authStore.user?.username || 'Guest User')
+const userEmail = computed(() => authStore.user?.email || 'No email provided')
+
+const handleSignOut = () => {
+  authStore.signOut()
+  router.push('/signin')
+}
 </script>
