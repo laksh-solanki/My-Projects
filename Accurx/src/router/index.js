@@ -27,12 +27,6 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue'),
       meta: { title: 'Contact' },
     },
-    {
-      path: '/signin',
-      name: 'signin',
-      component: () => import('../views/signin.vue'),
-      meta: { title: 'Sign In' },
-    },
   ],
 })
 

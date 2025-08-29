@@ -14,7 +14,6 @@
           <v-tab to="/contact" value="contact">Contact</v-tab>
         </v-tabs>
         <search-bar width="450"></search-bar>
-        <Profile class="w-25 p-1"></Profile>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
@@ -23,7 +22,7 @@
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
       <v-list-item>
-        <search-bar></search-bar>
+        <search-bar ></search-bar>
       </v-list-item>
       <v-list-item to="/">
         <v-list-item-title>Home</v-list-item-title>
@@ -37,22 +36,17 @@
       <v-list-item to="/contact">
         <v-list-item-title>Contact</v-list-item-title>
       </v-list-item>
-      <v-list-item>
-        <Profile></Profile>
-      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
 import SearchBar from './SearchBar.vue'
-import Profile from './profile.vue'
 
 export default {
   name: 'AppNavbar',
   components: {
     SearchBar,
-    Profile,
   },
   data() {
     return {

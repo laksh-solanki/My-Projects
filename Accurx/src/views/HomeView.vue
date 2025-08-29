@@ -12,7 +12,9 @@ export default {
 <template>
   <div class="professional-container">
     <!-- Hero Section -->
-    <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" class="rounded-5 sec" height="607">
+    <v-parallax
+      src="https://media.istockphoto.com/id/1312314989/vector/white-metro-tiles-seamless-background-subway-brick-horizontal-pattern-for-kitchen-bathroom.jpg?s=612x612&w=0&k=20&c=IW3b5rLojeThvsgWJP5awMQ8uBjHsYbZOlTHFglytcY="
+      class="rounded-5 sec" height="607">
       <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
@@ -42,7 +44,7 @@ export default {
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us-section ">
+    <section class="why-choose-us-section">
       <h2 class="section-title">Why Partner with Us?</h2>
       <div class="features-grid">
         <div class="feature-item">
@@ -67,7 +69,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   /* Professional, clean font */
   min-height: 100vh;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 /* Global Section Styling */
@@ -102,7 +104,7 @@ section {
   text-align: center;
   min-height: 82vh;
   background-color: transparent;
-  color: #fff;
+  color: #000000;
   border-radius: 8px;
   margin-bottom: 4rem;
   box-shadow: none;
@@ -124,35 +126,29 @@ section {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* From Uiverse.io by adamgiebl */
 .professional-button {
-  font-size: 18px;
-  display: inline-block;
-  outline: 0;
-  border: 0;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #2f2f2f;
   cursor: pointer;
-  will-change: box-shadow, transform;
-  background: radial-gradient(100% 100% at 100% 0%, #5fd4f5 0%, #5468FF 100%);
-  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
-  padding: 12px;
-  border-radius: 0.3em;
-  color: #fff;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  font-size: 18px;
+  padding: 15px 40px;
   text-decoration: none;
-  text-align: center;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(22, 22, 22);
 }
 
 .professional-button:hover {
-  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
-  transform: translateY(-0.1em);
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
-.professional-button:active {
-  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
-  transform: translateY(0em);
+.professional-button:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
 .tiles-grid {
@@ -163,17 +159,27 @@ section {
 }
 
 /* Why Choose Us Section */
+.why-choose-us-section {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .feature-item {
   background-color: #f0f0f0;
   padding: 1.5rem;
   border-radius: 8px;
+  height: 300px;
+  align-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition:
     transform 0.3s ease,
@@ -182,12 +188,12 @@ section {
 
 .feature-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgb(1, 1, 1);
 }
 
 .feature-item h3 {
   color: #007bff;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
   font-size: 1.6rem;
 }
 
