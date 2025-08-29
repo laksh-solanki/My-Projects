@@ -67,9 +67,8 @@ export default {
 <style scoped>
 .professional-container {
   font-family: 'Roboto', sans-serif;
-  /* Professional, clean font */
   min-height: 100vh;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 /* Global Section Styling */
