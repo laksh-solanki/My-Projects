@@ -1,11 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
-import aboutcards from '@/components/aboutcards.vue'
+import cardRoll from '@/components/card-roll.vue'
 
 defineOptions({
   name: 'AboutPage',
   components: {
-    aboutcards,
+    cardRoll
   },
 })
 
@@ -28,18 +28,6 @@ onMounted(() => {
       <p class="about-subtitle">
         Dedicated to delivering superior quality and unparalleled service in every project.
       </p>
-    </section>
-
-    <section class="team-section">
-      <h2 class="section-title">Meet Our Leadership Team</h2>
-      <div class="cards-grid">
-        <aboutcards imageSrc="/Photos/Til-1.jpeg" title="Elegant floor Ceramic Tiles"
-          description="Chief Executive Officer" stock="In Stock" price="$150,000" />
-        <aboutcards imageSrc="/Photos/Til-2.avif" title="Durable floor Porcelain Tiles" description="Head of Operations"
-          stock="In Stock" price="$120,000" />
-        <aboutcards imageSrc="/Photos/Til-3.webp" title="Comfortable Vinyl Flooring" description="Director of Client"
-          stock="In Stock" price="$130,000" />
-      </div>
     </section>
 
     <section class="mission-section">
@@ -82,6 +70,9 @@ onMounted(() => {
           </div>
         </div>
       </div>
+    </section>
+    <section class="cardroll">
+      <cardRoll></cardRoll>
     </section>
   </div>
 </template>
@@ -204,6 +195,10 @@ section {
   max-height: 200px;
   /* Adjust as needed */
   padding-bottom: 1.5rem;
+}
+
+.cardroll {
+  height: 600px;
 }
 
 /* Responsive adjustments */

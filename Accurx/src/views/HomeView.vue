@@ -14,7 +14,7 @@ export default {
     <!-- Hero Section -->
     <v-parallax
       src="https://media.istockphoto.com/id/1312314989/vector/white-metro-tiles-seamless-background-subway-brick-horizontal-pattern-for-kitchen-bathroom.jpg?s=612x612&w=0&k=20&c=IW3b5rLojeThvsgWJP5awMQ8uBjHsYbZOlTHFglytcY="
-      class="rounded-5 sec" height="607">
+      class="sec" height="607" width="1600">
       <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
@@ -68,14 +68,14 @@ export default {
 .professional-container {
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
-  padding: 1rem 1rem 1rem 1rem;
+  padding-top: 0.08rem;
 }
 
 /* Global Section Styling */
 section {
   background-color: #2c3e50;
   /* Dark blue-gray background */
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -150,6 +150,10 @@ section {
   box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
+.tiles-section{
+  margin: 1rem;
+}
+
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
@@ -162,6 +166,7 @@ section {
   height: 100%;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 }
 
 .features-grid {
@@ -177,7 +182,7 @@ section {
   background-color: #f0f0f0;
   padding: 1.5rem;
   border-radius: 8px;
-  height: 300px;
+  height: 250px;
   align-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition:

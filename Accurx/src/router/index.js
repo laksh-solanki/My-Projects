@@ -27,6 +27,12 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue'),
       meta: { title: 'Contact' },
     },
+    {
+      path: '/Tile',
+      name: 'Tile',
+      component: () => import('../views/Tile.vue'),
+      meta: { title: 'Tile' },
+    },
   ],
 })
 

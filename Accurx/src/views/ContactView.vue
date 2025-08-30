@@ -64,7 +64,7 @@ export default {
 <template>
   <div class="contact-page container-fluid py-5 text-white">
     <div class="container">
-      <h1 class="text-center mb-5 display-4 fw-bold">Contect Us</h1>
+      <h1 class="text-center display-4 fw-bold" style="margin-bottom: 50px; margin-top: 20px;">Contect Us</h1>
 
       <div class="row">
         <!-- Contact Form Section -->
@@ -111,7 +111,7 @@ export default {
                 <span v-if="!formErrors.subject && form.subject" class="success-icon">✓</span>
                 <div class="invalid-feedback">Subject is required.</div>
               </div>
-              <div class="mb-4 position-relative">
+              <div class="mb-3 position-relative">
                 <label for="message" class="form-label">Your Message</label>
                 <textarea :class="[
                   'form-control',
@@ -120,7 +120,7 @@ export default {
                     'is-invalid': formErrors.message,
                     'pe-4': !formErrors.message && form.message,
                   },
-                ]" style="height: 219px" id="message" rows="6" v-model="form.message" required></textarea>
+                ]" style="height: 210px" id="message" rows="6" v-model="form.message" required></textarea>
                 <span v-if="!formErrors.message && form.message" class="success-icon">✓</span>
                 <div class="invalid-feedback">Message is required.</div>
               </div>
@@ -193,14 +193,6 @@ export default {
                 </div>
               </li>
             </ul>
-          </div>
-
-          <div class="map-container rounded shadow-lg overflow-hidden">
-            <h2 class="mb-4 text-center">Our Location</h2>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2999999999996!2d144.9631!3d-37.814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ4JzQ5LjkiUyAxNDRwrDU3JzQ3LjIiRQ!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
-              width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

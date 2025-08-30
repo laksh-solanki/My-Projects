@@ -12,6 +12,7 @@
           <v-tab to="/about" value="about">About</v-tab>
           <v-tab to="/services" value="services">Services</v-tab>
           <v-tab to="/contact" value="contact">Contact</v-tab>
+          <v-tab to="/Tile" value="Tile">Tile</v-tab>
         </v-tabs>
         <search-bar width="450"></search-bar>
       </div>
@@ -22,7 +23,7 @@
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
       <v-list-item>
-        <search-bar ></search-bar>
+        <search-bar></search-bar>
       </v-list-item>
       <v-list-item to="/">
         <v-list-item-title>Home</v-list-item-title>
@@ -35,6 +36,9 @@
       </v-list-item>
       <v-list-item to="/contact">
         <v-list-item-title>Contact</v-list-item-title>
+      </v-list-item>
+      <v-list-item to="/Tile">
+        <v-list-item-title>Tile</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
