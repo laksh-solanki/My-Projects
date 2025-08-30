@@ -61,7 +61,7 @@
 
 <template>
   <div class="wrapper">
-    <div class="inner" style="--quantity: 10;">
+    <div class="inner" style="--quantity: 7;">
       <div class="card" style="--index: 0;--color-card: 142, 249, 252;">
         <div class="img">
           <img src="/Photos/Til-1.jpeg" alt="Elegant floor Ceramic Tiles">
@@ -97,21 +97,7 @@
           <img src="/Photos/Til-7.jpg" alt="Elegant floor Ceramic Tiles">
         </div>
       </div>
-      <div class="card" style="--index: 7;--color-card: 252, 142, 239;">
-        <div class="img">
-          <img src="/Photos/Til-8.jpg" alt="Elegant floor Ceramic Tiles">
-        </div>
-      </div>
-      <div class="card" style="--index: 8;--color-card: 204, 142, 252;">
-        <div class="img">
-          <img src="/Photos/Til-9.jpg" alt="Elegant floor Ceramic Tiles">
-        </div>
-      </div>
-      <div class="card" style="--index: 9;--color-card: 142, 202, 252;">
-        <div class="img">
-          <img src="/Photos/Til-10.jpg" alt="Elegant floor Ceramic Tiles">
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>
