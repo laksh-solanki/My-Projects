@@ -66,8 +66,10 @@
             </v-list-item>
           </v-list>
         </v-menu>
+          <v-list-item class="bg-transparent" width="300">
+            <v-list-item-title><search-bar></search-bar></v-list-item-title>
+          </v-list-item>
       </div>
-      <search-bar width="450"></search-bar>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
@@ -75,6 +77,9 @@
   <!-- Mobile Navigation Drawer -->
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
+      <v-list-item>
+        <v-list-item-title><search-bar></search-bar></v-list-item-title>
+      </v-list-item>
       <v-list-item to="/Tile">
         <v-list-item-title>All Tiles</v-list-item-title>
       </v-list-item>
