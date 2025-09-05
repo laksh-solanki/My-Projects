@@ -108,7 +108,6 @@ section {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-  /* Subtle gradient */
   color: #fff;
   border-radius: 8px;
   margin-bottom: 4rem;

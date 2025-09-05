@@ -6,7 +6,7 @@
             alt="Accurx Logo" /></router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="d-none d-md-flex align-center w-75">
+      <div class="d-none d-md-flex align-center">
         <v-tabs v-model="activeTab" :show-arrows="false" class="w-100">
           <v-tab to="/" value="home">Home</v-tab>
           <v-tab to="/about" value="about">About</v-tab>
@@ -14,7 +14,7 @@
           <v-tab to="/contact" value="contact">Contact</v-tab>
           <v-tab to="/Tile" value="Tile">Tile</v-tab>
         </v-tabs>
-        <search-bar width="450"></search-bar>
+        
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
@@ -22,9 +22,6 @@
 
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
-      <v-list-item>
-        <search-bar></search-bar>
-      </v-list-item>
       <v-list-item to="/">
         <v-list-item-title>Home</v-list-item-title>
       </v-list-item>

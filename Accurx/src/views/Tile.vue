@@ -9,12 +9,6 @@ import TileNavbar from '@/components/TileNavbar.vue'
 
 <template>
   <TileNavbar />
-  <section class="tile-view container text-center text-white">
-    <div class="fw-bold fs-3">
-      <h1>Tile View</h1>
-      <p>Explore our exquisite range of tiles.</p>
-    </div>
-  </section>
   <section class="Tile-section">
     <div class="cards-grid">
       <TileCards imageSrc="/Photos/Til-1.jpeg" title="Elegant floor Ceramic Tiles" description="Chief Executive Officer"
@@ -31,9 +25,9 @@ import TileNavbar from '@/components/TileNavbar.vue'
         stock="In Stock" price="₹170" />
       <TileCards imageSrc="/Photos/Til-7.jpg" title="Classic Marble Tiles" description="Customer Support"
         stock="In Stock" price="₹180" />
-      <TileCards imageSrc="/Photos/Til-8.jpg" title="Rustic Terracotta Tiles" description="Business Analyst"
+      <TileCards imageSrc="/Photos/Til-8.webp" title="Rustic Terracotta Tiles" description="Business Analyst"
         stock="In Stock" price="₹190" />
-      <TileCards imageSrc="/Photos/Til-9.jpg" title="Sleek Glass Tiles" description="Financial Advisor"
+      <TileCards imageSrc="/Photos/Til-9.avif" title="Sleek Glass Tiles" description="Financial Advisor"
         stock="In Stock" price="₹200" />
       <TileCards imageSrc="/Photos/Til-10.jpg" title="Textured Concrete Tiles" description="HR Manager"
         stock="In Stock" price="₹210" />
@@ -58,7 +52,7 @@ import TileNavbar from '@/components/TileNavbar.vue'
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   justify-content: center;
 }

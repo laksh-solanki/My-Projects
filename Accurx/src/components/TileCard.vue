@@ -63,59 +63,56 @@ export default {
 <style scoped>
 .card {
   width: 100%;
-  /* Fixed width */
-  height: 100%;
-  /* Fixed height */
+  min-height: 400px;
   overflow: hidden;
   display: flex;
   border: none;
   justify-self: center;
   align-items: center;
   cursor: pointer;
+
+  & .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  & .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+
+    & .card-title {
+      margin-bottom: 0.5rem;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    & .card-text {
+      font-size: 0.9rem;
+      transform: translateY(20px);
+      transition: transform 0.3s ease 0.1s;
+    }
+  }
 }
 
-.card-img-top {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Ensure image covers the area */
-  transition: transform 0.3s ease;
-}
 
 .card:hover .card-img-top {
   transform: scale(1.05);
 }
 
-.card-body {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Semi-transparent black background */
-  color: white;
-  padding: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
 
 .card:hover .card-body {
   opacity: 1;
-}
-
-.card-title {
-  margin-bottom: 0.5rem;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  /* Indicate that the title is clickable */
-}
-
-.card-text {
-  font-size: 0.9rem;
-  transform: translateY(20px);
-  transition: transform 0.3s ease 0.1s;
 }
 
 .card:hover .card-title,
@@ -148,17 +145,13 @@ export default {
   white-space: nowrap;
 }
 
-/* Fade transition for copied message */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
 }
 
 .fade-enter,
-.fade-leave-to
-
-/* .fade-leave-active in <2.1.8 */
-  {
+.fade-leave-to {
   opacity: 0;
 }
 </style>

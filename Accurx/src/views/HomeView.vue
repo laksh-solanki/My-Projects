@@ -14,7 +14,7 @@ export default {
     <!-- Hero Section -->
     <v-parallax
       src="https://media.istockphoto.com/id/1312314989/vector/white-metro-tiles-seamless-background-subway-brick-horizontal-pattern-for-kitchen-bathroom.jpg?s=612x612&w=0&k=20&c=IW3b5rLojeThvsgWJP5awMQ8uBjHsYbZOlTHFglytcY="
-      class="sec" height="607" width="1600">
+      class="sec" height="665" width="1600">
       <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
@@ -156,7 +156,7 @@ section {
 
 .tiles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-content: center;
 }
@@ -192,7 +192,6 @@ section {
 
 .feature-item:hover {
   transform: translateY(-5px);
-  border: 3px solid rgb(1, 1, 1);
 }
 
 .feature-item h3 {

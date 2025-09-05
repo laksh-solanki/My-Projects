@@ -29,7 +29,7 @@ export default {
 <template>
   <div>
     <v-hover v-slot="{ isHovering, props }">
-      <v-card class="mx-auto rounded-4" color="grey-lighten-4" max-width="400" v-bind="props">
+      <v-card class="mx-auto rounded-4" color="grey-lighten-4" min-height="400" v-bind="props">
         <v-img :aspect-ratio="16 / 9" :src="imageSrc" cover>
           <v-expand-transition>
             <div v-if="isHovering" class="d-flex bg-white v-card--reveal text-h2" style="height: 100%">

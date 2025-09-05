@@ -3,12 +3,7 @@
     <v-container class="d-flex align-center">
       <div class="d-none d-md-flex align-center w-75">
         <!-- All Tiles Link -->
-        <v-btn 
-          to="/Tile" 
-          text 
-          class="nav-link mx-2"
-          :class="{ 'active-link': $route.path === '/Tile' }"
-        >
+        <v-btn to="/Tile" text class="nav-link mx-2" :class="{ 'active-link': $route.path === '/Tile' }">
           All Tiles
         </v-btn>
 
@@ -72,7 +67,7 @@
           </v-list>
         </v-menu>
       </div>
-
+      <search-bar width="450"></search-bar>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
@@ -83,7 +78,7 @@
       <v-list-item to="/Tile">
         <v-list-item-title>All Tiles</v-list-item-title>
       </v-list-item>
-      
+
       <v-list-group value="Ceramic Tiles">
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" title="Ceramic Tiles"></v-list-item>
@@ -124,8 +119,13 @@
 </template>
 
 <script>
+import SearchBar from './SearchBar.vue';
+
 export default {
   name: 'TileNavbar',
+  components: {
+    SearchBar,
+  },
   data() {
     return {
       drawer: false,
@@ -168,30 +168,22 @@ export default {
 
 .tile-navbar {
   margin-bottom: 20px;
+
+  & .nav-link {
+    font-family: 'Rubik', sans-serif;
+    color: #fff !important;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 14px;
+    min-width: 120px;
+
+    & .nav-link:hover {
+      background-color: rgb(31, 137, 92);
+    }
+  }
 }
 
-.navbar-brand {
-  margin-left: 12px;
-}
-
-.navbar-brand img {
-  max-width: 100%;
-  height: auto;
-}
-
-.nav-link {
-  font-family: 'Rubik', sans-serif;
-  color: #fff !important;
-  font-weight: 500;
-  text-transform: none;
-  font-size: 14px;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.active-link {
+.nav-link .active-link {
   background-color: rgba(255, 255, 255, 0.2) !important;
   border-bottom: 2px solid #fff;
 }
