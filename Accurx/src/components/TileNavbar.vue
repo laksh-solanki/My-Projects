@@ -67,7 +67,7 @@
           </v-list>
         </v-menu>
         <v-list-item class="bg-transparent" width="300">
-          <v-list-item-title><search-bar></search-bar></v-list-item-title>
+          <v-list-item-title><search-bar @search-input="onSearchInput"></search-bar></v-list-item-title>
         </v-list-item>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -164,6 +164,11 @@ export default {
   computed: {
     isMobile() {
       return this.$vuetify?.display?.mdAndDown || false
+    }
+  },
+  methods: {
+    onSearchInput(searchText) {
+      this.$emit('name-selected', searchText)
     }
   }
 }

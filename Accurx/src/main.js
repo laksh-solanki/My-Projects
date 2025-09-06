@@ -21,7 +21,10 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 
 let docTitle = document.title
 window.addEventListener('blur', () => {
-  document.title = 'Come back!'
+  document.title = 'Come Back To Accurx App'
+})
+window.addEventListener('beforeunload', () => {
+  document.title = docTitle
 })
 window.addEventListener('focus', () => {
   document.title = docTitle

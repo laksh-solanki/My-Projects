@@ -4,6 +4,7 @@ export default {
   data: () => ({
     loaded: false,
     loading: false,
+    searchText: '',
   }),
   methods: {
     onClick() {
@@ -13,6 +14,9 @@ export default {
         this.loaded = true
       }, 2000)
     },
+    onInput() {
+      this.$emit('search-input', this.searchText)
+    },
   },
 }
 </script>
@@ -20,8 +24,8 @@ export default {
 <template>
   <v-card class="mx-auto" max-width="400">
     <v-card-text>
-      <v-text-field :loading="loading" append-inner-icon="mdi-magnify" density="compact" label="Search..."
-        variant="solo-filled" type="search" hide-details single-line @click:append-inner="onClick"></v-text-field>
+      <v-text-field v-model="searchText" :loading="loading" append-inner-icon="mdi-magnify" density="compact" label="Search Tiles ..."
+        variant="solo-filled" type="search" hide-details single-line @input="onInput" @click:control="onClick"></v-text-field>
     </v-card-text>
   </v-card>
 </template>

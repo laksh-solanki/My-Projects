@@ -8,7 +8,7 @@ export default {
     },
     price: {
       type: String,
-      default: '$0.00', // Default price if none provided
+      default: '$0.0/-sqft', // Default price if none provided
     },
     title: {
       type: String,
@@ -16,11 +16,22 @@ export default {
     },
     description: {
       type: String,
-      default: 'Default description text.',
+      default: 'Wall & Floor',
     },
-    stock: {
+    Instock: {
       type: String,
-      default: 'In Stock', // Default stock status
+      default: null,
+    },
+    Outstock: {
+      type: String,
+      default: null,
+    },
+    Size: {
+      type: String,
+    },
+    lowNetwork: {
+      type: Boolean,
+      default: false,
     },
     selectedName: {
       type: String,
@@ -32,16 +43,11 @@ export default {
 
 <template>
   <div>
-    <v-skeleton-loader v-if="lowNetwork" class="mx-auto rounded-4" elevation="2" max-width="360"
-      type="card, article" boilerplate />
+    <v-skeleton-loader v-if="lowNetwork" class="mx-auto rounded-4" elevation="2" max-width="360" type="card, article"
+      boilerplate />
     <v-hover v-else v-slot="{ isHovering, props }">
-      <v-card
-        class="mx-auto rounded-4"
-        color="grey-lighten-4"
-        min-height="400"
-        v-bind="props"
-        :class="{ 'selected-card': title === selectedName }"
-      >
+      <v-card class="mx-auto rounded-4" color="grey-lighten-4" min-height="400" v-bind="props"
+        :class="{ 'selected-card': title === selectedName }" elevation="2" max-width="360">
         <v-img :aspect-ratio="16 / 9" :src="imageSrc" cover>
           <v-expand-transition>
             <div v-if="isHovering" class="d-flex bg-white v-card--reveal text-h2" style="height: 100%">
@@ -51,17 +57,23 @@ export default {
         </v-img>
 
         <v-card-text class="pt-6">
-          <div class="text-h4 font-weight-light text-blue mb-2">
-            {{ title }}
-          </div>
-
-          <h3 class="font-weight-light text-grey text-h6 mb-2">
-            {{ description }}
-          </h3>
-
-          <div class="font-weight-light text-h6 mb-2">
-            {{ stock }}
-          </div>
+          <v-row>
+            <v-col cols="12" class="text-h4 font-weight-light text-blue py-2">
+              {{ title }}
+            </v-col>
+            <v-col cols="12" class="font-weight-light text-grey text-h6 py-2">
+              {{ description }}
+            </v-col>
+            <v-col cols="12" v-if="Instock" class="font-weight-light text-h6 text-success py-2">
+              {{ Instock }}
+            </v-col>
+            <v-col cols="12" v-if="Outstock" class="font-weight-light text-h6 text-danger py-2">
+              {{ Outstock }}
+            </v-col>
+            <v-col cols="12" class="font-weight-light text-h6 text-dark py-2">
+              {{ Size }}
+            </v-col>
+          </v-row>
         </v-card-text>
       </v-card>
     </v-hover>
