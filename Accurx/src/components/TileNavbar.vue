@@ -67,7 +67,7 @@
           </v-list>
         </v-menu>
         <v-list-item class="bg-transparent" width="300">
-          <v-list-item-title><search-bar @search-input="onSearchInput"></search-bar></v-list-item-title>
+          <v-list-item-title><search-bar :loading="loading" @search-input="onSearchInput"></search-bar></v-list-item-title>
         </v-list-item>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -78,7 +78,7 @@
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
       <v-list-item>
-        <v-list-item-title><search-bar></search-bar></v-list-item-title>
+        <v-list-item-title><search-bar :loading="loading"></search-bar></v-list-item-title>
       </v-list-item>
       <v-list-item @click="$emit('name-selected', null)">
         <v-list-item-title>All Tiles</v-list-item-title>
@@ -130,6 +130,9 @@ export default {
   name: 'TileNavbar',
   components: {
     SearchBar,
+  },
+  props: {
+    loading: Boolean,
   },
   data() {
     return {

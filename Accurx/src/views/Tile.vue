@@ -6,6 +6,18 @@ defineOptions({
 import TileCards from '@/components/Tilecards.vue'
 import TileNavbar from '@/components/TileNavbar.vue'
 
+const emit = defineEmits(['loading-state'])
+
+function onNameSelected(name) {
+  loading.value = true
+  selectedName.value = name
+  emit('loading-state', loading.value)
+  setTimeout(() => {
+    loading.value = false
+    emit('loading-state', loading.value)
+  }, 1000)
+}
+
 const selectedName = ref(null)
 const loading = ref(false)
 
@@ -30,20 +42,10 @@ const filteredCards = computed(() => {
   const searchText = selectedName.value.toLowerCase()
   return cards.filter(card => card.title.toLowerCase().includes(searchText))
 })
-
-
-
-function onNameSelected(name) {
-  loading.value = true
-  selectedName.value = name
-  setTimeout(() => {
-    loading.value = false
-  }, 1000)
-}
 </script>
 
 <template>
-  <TileNavbar @name-selected="onNameSelected" />
+  <TileNavbar @name-selected="onNameSelected" :loading="loading" />
   <section class="Tile-section">
     <v-row class="cards-grid">
       <v-col v-if="loading" cols="12" md="3" sm="4" xs="12" v-for="n in 6" :key="n">
