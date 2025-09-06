@@ -2,10 +2,10 @@
   <v-app-bar app color="blue-darken-2" height="70" dark class="tile-navbar">
     <v-container class="d-flex align-center">
       <div class="d-none d-md-flex align-center w-75">
-        <!-- All Tiles Link -->
-        <v-btn to="/Tile" text class="nav-link mx-2" :class="{ 'active-link': $route.path === '/Tile' }">
-          All Tiles
-        </v-btn>
+        <!-- All Tiles Tab -->
+        <v-tabs class="nav-link mx-2" :class="{ 'active-link': $route.path === '/Tile' }">
+          <v-tab @click="$emit('name-selected', null)">All Tiles</v-tab>
+        </v-tabs>
 
         <!-- Ceramic Tiles Dropdown -->
         <v-menu open-on-hover offset-y>
@@ -16,7 +16,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in ceramicItems" :key="index" :to="item.to">
+            <v-list-item v-for="(item, index) in ceramicItems" :key="index" @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -31,7 +31,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in porcelainItems" :key="index" :to="item.to">
+            <v-list-item v-for="(item, index) in porcelainItems" :key="index" @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -46,7 +46,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in flooringItems" :key="index" :to="item.to">
+            <v-list-item v-for="(item, index) in flooringItems" :key="index" @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -61,14 +61,14 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in stoneItems" :key="index" :to="item.to">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
+        <v-list-item v-for="(item, index) in stoneItems" :key="index" @click="$emit('name-selected', item.title)">
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
           </v-list>
         </v-menu>
-          <v-list-item class="bg-transparent" width="300">
-            <v-list-item-title><search-bar></search-bar></v-list-item-title>
-          </v-list-item>
+        <v-list-item class="bg-transparent" width="300">
+          <v-list-item-title><search-bar></search-bar></v-list-item-title>
+        </v-list-item>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
@@ -80,7 +80,7 @@
       <v-list-item>
         <v-list-item-title><search-bar></search-bar></v-list-item-title>
       </v-list-item>
-      <v-list-item to="/Tile">
+      <v-list-item @click="$emit('name-selected', null)">
         <v-list-item-title>All Tiles</v-list-item-title>
       </v-list-item>
 
@@ -88,7 +88,7 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" title="Ceramic Tiles"></v-list-item>
         </template>
-        <v-list-item v-for="(item, index) in ceramicItems" :key="index" :to="item.to">
+        <v-list-item v-for="(item, index) in ceramicItems" :key="index" @click="$emit('name-selected', item.title)">
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list-group>
@@ -97,7 +97,7 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" title="Porcelain Tiles"></v-list-item>
         </template>
-        <v-list-item v-for="(item, index) in porcelainItems" :key="index" :to="item.to">
+        <v-list-item v-for="(item, index) in porcelainItems" :key="index" @click="$emit('name-selected', item.title)">
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list-group>
@@ -106,7 +106,7 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" title="Flooring Types"></v-list-item>
         </template>
-        <v-list-item v-for="(item, index) in flooringItems" :key="index" :to="item.to">
+        <v-list-item v-for="(item, index) in flooringItems" :key="index" @click="$emit('name-selected', item.title)">
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list-group>
@@ -115,7 +115,7 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" title="Natural Stone"></v-list-item>
         </template>
-        <v-list-item v-for="(item, index) in stoneItems" :key="index" :to="item.to">
+        <v-list-item v-for="(item, index) in stoneItems" :key="index" @click="$emit('name-selected', item.title)">
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list-group>
@@ -134,6 +134,7 @@ export default {
   data() {
     return {
       drawer: false,
+      activeTab: null,
       ceramicItems: [
         { title: 'Elegant Ceramic Tiles', to: '/Tile#ceramic' },
         { title: 'Patterned Ceramic', to: '/Tile#patterned-ceramic' },
