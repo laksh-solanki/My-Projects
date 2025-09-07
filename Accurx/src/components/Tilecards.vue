@@ -43,9 +43,7 @@ export default {
 
 <template>
   <div>
-    <v-skeleton-loader v-if="lowNetwork" class="mx-auto rounded-4" elevation="2" max-width="360" type="card, article"
-      boilerplate />
-    <v-hover v-else v-slot="{ isHovering, props }">
+    <v-hover v-slot="{ isHovering, props }">
       <v-card class="mx-auto rounded-4" color="grey-lighten-4" min-height="400" v-bind="props"
         :class="{ 'selected-card': title === selectedName }" elevation="2" max-width="360">
         <v-img :aspect-ratio="16 / 9" :src="imageSrc" cover>

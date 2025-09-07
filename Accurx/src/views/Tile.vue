@@ -48,8 +48,8 @@ const filteredCards = computed(() => {
   <TileNavbar @name-selected="onNameSelected" :loading="loading" />
   <section class="Tile-section">
     <v-row class="cards-grid">
-      <v-col v-if="loading" cols="12" md="3" sm="4" xs="12" v-for="n in 12" :key="n">
-        <v-skeleton-loader type="card, article" />
+      <v-col cols="12" md="3" sm="4" xs="12" v-for="n in 12" :key="n" v-if="loading">
+        <v-skeleton-loader type="card, article" class="rounded-4" />
       </v-col>
       <v-col v-else cols="12" md="3" sm="4" xs="12" v-for="(card, index) in filteredCards" :key="index">
         <TileCards v-bind="card" :selectedName="selectedName" />
