@@ -76,7 +76,7 @@
   </v-app-bar>
   <!-- Mobile Navigation Drawer -->
   <v-navigation-drawer v-model="drawer" app temporary right>
-    <v-list>
+    <v-list nav dense :activatable="true" :active-class="'active-link'">
       <v-list-item @click="$emit('name-selected', null)">
         <v-list-item-title>All Tiles</v-list-item-title>
       </v-list-item>

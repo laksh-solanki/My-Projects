@@ -20,21 +20,36 @@
     </v-container>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" app temporary right>
-    <v-list>
+  <v-navigation-drawer v-model="drawer" app left>
+    <v-list nav dense>
       <v-list-item to="/">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
         <v-list-item-title>Home</v-list-item-title>
       </v-list-item>
       <v-list-item to="/about">
+        <v-list-item-icon>
+          <v-icon>mdi-information-outline</v-icon>
+        </v-list-item-icon>
         <v-list-item-title>About</v-list-item-title>
       </v-list-item>
       <v-list-item to="/services">
+        <v-list-item-icon>
+          <v-icon>mdi-tools</v-icon>
+        </v-list-item-icon>
         <v-list-item-title>Services</v-list-item-title>
       </v-list-item>
       <v-list-item to="/contact">
+        <v-list-item-icon>
+          <v-icon>mdi-email-outline</v-icon>
+        </v-list-item-icon>
         <v-list-item-title>Contact</v-list-item-title>
       </v-list-item>
       <v-list-item to="/Tile">
+        <v-list-item-icon>
+          <v-icon>mdi-view-dashboard</v-icon>
+        </v-list-item-icon>
         <v-list-item-title>Tile</v-list-item-title>
       </v-list-item>
     </v-list>
