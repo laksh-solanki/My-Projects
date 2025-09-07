@@ -31,12 +31,14 @@
         </v-row>
       </section>
 
-      <div class="text-center mt-10">
-        <v-btn large color="" @click="dialog = true" class="con-btn">Contact Us</v-btn>
+      <div class="text-center">
+        <v-btn @click="dialog = true" class="con-btn">Contact Us</v-btn>
       </div>
 
       <v-dialog v-model="dialog" max-width="500px">
-        <v-card class="rounded-4">
+        <v-card class="rounded-bottom-2">
+          <button type="button" class="btn btn-close btn-light bg-light mb-0 mt-4 ms-5"
+            @click="dialog = false"></button>
           <contactService />
         </v-card>
       </v-dialog>
@@ -127,52 +129,20 @@ export default {
 }
 
 .con-btn {
-  --color: rgb(37, 211, 102);
-  font-family: inherit;
-  display: inline-block;
-  width: 10em;
-  height: 3em;
-  line-height: 2.5em;
-  margin: 20px;
-  position: relative;
+  font-size: 1.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
   cursor: pointer;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  z-index: 1;
-  font-size: 17px;
-  border-radius: 6px;
-  font-weight: 500;
-  color: var(--color);
+  margin: 35px 0;
+  height: 50px;
 }
 
-.con-btn:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 300px;
-  border-radius: 50%;
-}
-
-.con-btn:hover {
-  color: #fff;
-}
-
-.con-btn:before {
-  top: 100%;
-  left: 100%;
-  transition: all 0.9s;
-}
-
-.con-btn:hover:before {
-  top: -30px;
-  left: -40px;
-}
-
-.con-btn:active::before {
-  background: var(--color);
-  transition: background 0s;
+.con-btn:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 </style>

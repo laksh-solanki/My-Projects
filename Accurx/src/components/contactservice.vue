@@ -98,6 +98,6 @@ function clear() {
     </div>
 
     <button type="submit" class="btn btn-primary me-2">Submit</button>
-    <button type="button" class="btn btn-secondary" @click="clear">Clear</button>
+    <button type="button" class="btn btn-secondary" @click="clear">Reset</button>
   </form>
 </template>
