@@ -1,4 +1,5 @@
 <script>
+import Formcon from '@/components/Formcon.vue'
 export default {
   name: 'ContactPage',
   data() {
@@ -204,17 +205,23 @@ export default {
       <button type="button" class="btn-close" @click="showAlert = false" aria-label="Close"></button>
     </div>
   </transition>
+  <div class="contact-info con">
+    <Formcon />
+  </div>
 </template>
 <style scoped>
 .contact-page {
   background-color: #000;
 }
 
+.con{
+  height: 300px;
+}
+
 .contact-form,
 .contact-info,
 .map-container {
   background-color: #1a1a1a;
-  /* Slightly lighter black for contrast */
   border: 3px solid #333;
   width: 100%;
 }
@@ -238,7 +245,6 @@ export default {
 
 .list-unstyled li i {
   color: #0d6efd;
-  /* Icon color */
 }
 
 iframe {
@@ -251,7 +257,6 @@ iframe {
   right: 20px;
   z-index: 1050;
   width: 300px;
-  /* Adjust width as needed */
 }
 
 .alert-fade-enter-active,
@@ -271,7 +276,6 @@ iframe {
   position: absolute;
   right: 10px;
   top: 70%;
-  /* Adjust as needed to align with the input field */
   transform: translateY(-50%);
   color: green;
   font-size: 1.2em;
