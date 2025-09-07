@@ -16,7 +16,8 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in ceramicItems" :key="index" @click.stop="$emit('name-selected', item.title)">
+            <v-list-item v-for="(item, index) in ceramicItems" :key="index"
+              @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -31,7 +32,8 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in porcelainItems" :key="index" @click.stop="$emit('name-selected', item.title)">
+            <v-list-item v-for="(item, index) in porcelainItems" :key="index"
+              @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -46,7 +48,8 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in flooringItems" :key="index" @click.stop="$emit('name-selected', item.title)">
+            <v-list-item v-for="(item, index) in flooringItems" :key="index"
+              @click.stop="$emit('name-selected', item.title)">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -61,13 +64,14 @@
             </v-btn>
           </template>
           <v-list>
-        <v-list-item v-for="(item, index) in stoneItems" :key="index" @click="$emit('name-selected', item.title)">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
+            <v-list-item v-for="(item, index) in stoneItems" :key="index" @click="$emit('name-selected', item.title)">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
           </v-list>
         </v-menu>
         <v-list-item class="bg-transparent" width="300">
-          <v-list-item-title><search-bar :loading="loading" @search-input="onSearchInput"></search-bar></v-list-item-title>
+          <v-list-item-title><search-bar :loading="loading"
+              @search-input="onSearchInput"></search-bar></v-list-item-title>
         </v-list-item>
       </div>
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -78,7 +82,8 @@
   <v-navigation-drawer v-model="drawer" app temporary right>
     <v-list>
       <v-list-item>
-        <v-list-item-title><search-bar :loading="loading"></search-bar></v-list-item-title>
+        <v-list-item-title><search-bar :loading="loading"
+            @search-input="onSearchInput"></search-bar></v-list-item-title>
       </v-list-item>
       <v-list-item @click="$emit('name-selected', null)">
         <v-list-item-title>All Tiles</v-list-item-title>
