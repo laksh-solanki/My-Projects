@@ -16,7 +16,7 @@ const state = reactive({
   ...initialState,
 })
 
-const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+const items = ['Elegant Ceramic Tiles', 'Comfortable Vinyl Flooring', 'Modern Laminate Flooring', 'Rustic Terracotta Tiles']
 
 const rules = {
   name: { required },
@@ -50,7 +50,7 @@ function clear() {
 }
 </script>
 <template>
-  <form class="p-4 needs-validation" novalidate @submit.prevent="validate">
+  <form class="p-4 pt-0 needs-validation" novalidate @submit.prevent="validate">
     <Success ref="successSnackbar" v-if="submitted && !v$.$invalid" />
     <Unsuccess ref="unsuccessSnackbar" v-if="submitted && v$.$invalid" />
 
@@ -96,8 +96,9 @@ function clear() {
         {{v$.checkbox.$errors.map((e) => e.$message).join(', ')}}
       </div>
     </div>
-
-    <button type="submit" class="btn btn-primary me-2">Submit</button>
-    <button type="button" class="btn btn-secondary" @click="clear">Reset</button>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary me-2">Submit</button>
+      <button type="button" class="btn btn-secondary" @click="clear">Reset</button>
+    </div>
   </form>
 </template>

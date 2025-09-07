@@ -29,7 +29,6 @@ onMounted(() => {
         Dedicated to delivering superior quality and unparalleled service in every project.
       </p>
     </section>
-
     <section class="mission-section">
       <h2 class="section-title">Our Core Values</h2>
       <div class="accordion-container">
