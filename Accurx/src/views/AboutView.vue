@@ -17,13 +17,13 @@
           <v-card-title class="text-h4">Our Story</v-card-title>
           <v-card-text>
             <p>
-              At Accurx, we have been dedicated to excellence in tile manufacturing for over a decade.
-              Our commitment to quality, innovation, and customer satisfaction has made us a trusted
-              name in the industry.
+              At Accurx, we have been dedicated to excellence in tile manufacturing for over a
+              decade. Our commitment to quality, innovation, and customer satisfaction has made us a
+              trusted name in the industry.
             </p>
             <p>
-              We offer a wide range of ceramic tiles that combine durability, style, and affordability,
-              suitable for any space.
+              We offer a wide range of ceramic tiles that combine durability, style, and
+              affordability, suitable for any space.
             </p>
           </v-card-text>
         </v-card>
@@ -46,15 +46,16 @@
             <v-expansion-panel>
               <v-expansion-panel-title>Quality</v-expansion-panel-title>
               <v-expansion-panel-text>
-                We are committed to delivering products and services of exceptional quality, ensuring
-                durability, performance, and aesthetic appeal.
+                We are committed to delivering products and services of exceptional quality,
+                ensuring durability, performance, and aesthetic appeal.
               </v-expansion-panel-text>
             </v-expansion-panel>
             <v-expansion-panel>
               <v-expansion-panel-title>Client Focus</v-expansion-panel-title>
               <v-expansion-panel-text>
-                Our clients are at the heart of everything we do. We strive to understand their needs
-                and exceed their expectations through personalized solutions and dedicated support.
+                Our clients are at the heart of everything we do. We strive to understand their
+                needs and exceed their expectations through personalized solutions and dedicated
+                support.
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -80,7 +81,7 @@ import TileGallery from '@/components/TileGallery.vue'
 defineOptions({
   name: 'AboutPage',
   components: {
-    TileGallery
+    TileGallery,
   },
 })
 </script>

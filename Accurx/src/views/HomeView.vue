@@ -14,7 +14,10 @@ export default {
     <!-- Hero Section -->
     <v-parallax
       src="https://media.istockphoto.com/id/1312314989/vector/white-metro-tiles-seamless-background-subway-brick-horizontal-pattern-for-kitchen-bathroom.jpg?s=612x612&w=0&k=20&c=IW3b5rLojeThvsgWJP5awMQ8uBjHsYbZOlTHFglytcY="
-      class="sec" height="665" width="1600">
+      class="sec"
+      height="665"
+      width="1600"
+    >
       <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-title">Elevate Your Space with Premium Flooring Solutions</h1>
@@ -23,9 +26,7 @@ export default {
             environment.
           </p>
         </div>
-        <router-link to="/contact" class="professional-button">
-          contact us
-        </router-link>
+        <router-link to="/contact" class="professional-button"> contact us </router-link>
       </section>
     </v-parallax>
 
@@ -33,13 +34,24 @@ export default {
     <section class="tiles-section">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <div class="tiles-grid">
-        <TileCard imageSrc="/Photos/Til-1.jpeg" title="Elegant Ceramic Tiles"
+        <TileCard
+          imageSrc="/Photos/Til-1.jpeg"
+          title="Elegant Ceramic Tiles"
           description="Versatile and robust, ideal for both residential and commercial applications."
-          price="$2.50/sq ft" />
-        <TileCard imageSrc="/Photos/Til-2.avif" title="Durable Porcelain Tiles"
-          description="Highly resistant to wear and moisture, perfect for high-traffic areas." price="$3.00/sq ft" />
-        <TileCard imageSrc="/Photos/Til-3.webp" title="Comfortable Vinyl Flooring"
-          description="Affordable, easy to maintain, and comfortable underfoot price and design." price="$1.75/sq ft" />
+          price="$2.50/sq ft"
+        />
+        <TileCard
+          imageSrc="/Photos/Til-2.avif"
+          title="Durable Porcelain Tiles"
+          description="Highly resistant to wear and moisture, perfect for high-traffic areas."
+          price="$3.00/sq ft"
+        />
+        <TileCard
+          imageSrc="/Photos/Til-3.webp"
+          title="Comfortable Vinyl Flooring"
+          description="Affordable, easy to maintain, and comfortable underfoot price and design."
+          price="$1.75/sq ft"
+        />
       </div>
     </section>
 
@@ -131,7 +143,9 @@ section {
 .professional-button {
   background-color: #e0e0e0;
   border-radius: 50px;
-  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  box-shadow:
+    inset 4px 4px 10px #bcbcbc,
+    inset -4px -4px 10px #ffffff;
   color: #2f2f2f;
   cursor: pointer;
   font-size: 18px;
@@ -142,15 +156,23 @@ section {
 }
 
 .professional-button:hover {
-  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  box-shadow:
+    inset 2px 2px 5px #bcbcbc,
+    inset -2px -2px 5px #ffffff,
+    2px 2px 5px #bcbcbc,
+    -2px -2px 5px #ffffff;
 }
 
 .professional-button:focus {
   outline: none;
-  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  box-shadow:
+    inset 2px 2px 5px #bcbcbc,
+    inset -2px -2px 5px #ffffff,
+    2px 2px 5px #bcbcbc,
+    -2px -2px 5px #ffffff;
 }
 
-.tiles-section{
+.tiles-section {
   margin: 1rem;
 }
 

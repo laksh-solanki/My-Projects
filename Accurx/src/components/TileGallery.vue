@@ -1,15 +1,13 @@
 <template>
   <div class="slider-wrapper" @mouseenter="pauseAutoPlay" @mouseleave="startAutoPlay">
-    <div class="slider-container" @touchstart="onTouchStart" @touchmove="onTouchMove" @touchend="onTouchEnd">
-      <div
-        class="slider-track"
-        :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
-      >
-        <div
-          v-for="(tile, index) in tiles"
-          :key="index"
-          class="slider-slide"
-        >
+    <div
+      class="slider-container"
+      @touchstart="onTouchStart"
+      @touchmove="onTouchMove"
+      @touchend="onTouchEnd"
+    >
+      <div class="slider-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+        <div v-for="(tile, index) in tiles" :key="index" class="slider-slide">
           <div class="slide-content">
             <img :src="tile.src" :alt="tile.alt" />
             <div class="slide-info">
@@ -46,96 +44,96 @@ export default {
           src: '/Photos/Til-1.jpeg',
           alt: 'Elegant Ceramic Tile 1',
           title: 'Classic White',
-          description: 'Timeless elegance for modern spaces.'
+          description: 'Timeless elegance for modern spaces.',
         },
         {
           src: '/Photos/Til-2.avif',
           alt: 'Elegant Ceramic Tile 2',
           title: 'Subtle Gray',
-          description: 'Versatile and sophisticated design.'
+          description: 'Versatile and sophisticated design.',
         },
         {
           src: '/Photos/Til-3.webp',
           alt: 'Elegant Ceramic Tile 3',
           title: 'Warm Beige',
-          description: 'Cozy and inviting atmosphere.'
+          description: 'Cozy and inviting atmosphere.',
         },
         {
           src: '/Photos/Til-4.jpg',
           alt: 'Elegant Ceramic Tile 4',
           title: 'Bold Pattern',
-          description: 'Statement piece for unique interiors.'
+          description: 'Statement piece for unique interiors.',
         },
         {
           src: '/Photos/Til-5.jpg',
           alt: 'Elegant Ceramic Tile 5',
           title: 'Marble Effect',
-          description: 'Luxurious look at an affordable price.'
+          description: 'Luxurious look at an affordable price.',
         },
         {
           src: '/Photos/Til-6.webp',
           alt: 'Elegant Ceramic Tile 6',
           title: 'Geometric Design',
-          description: 'Modern and trendy patterns.'
+          description: 'Modern and trendy patterns.',
         },
         {
           src: '/Photos/Til-7.jpg',
           alt: 'Elegant Ceramic Tile 7',
           title: 'Natural Stone',
-          description: 'Authentic feel with durability.'
-        }
-      ]
+          description: 'Authentic feel with durability.',
+        },
+      ],
     }
   },
   methods: {
     onTouchStart(event) {
-      this.isDragging = true;
-      this.startX = event.touches[0].clientX;
+      this.isDragging = true
+      this.startX = event.touches[0].clientX
     },
     onTouchMove(event) {
-      if (!this.isDragging) return;
-      event.preventDefault();
+      if (!this.isDragging) return
+      event.preventDefault()
     },
     onTouchEnd(event) {
-      if (!this.isDragging) return;
-      this.isDragging = false;
-      const endX = event.changedTouches[0].clientX;
-      const deltaX = endX - this.startX;
+      if (!this.isDragging) return
+      this.isDragging = false
+      const endX = event.changedTouches[0].clientX
+      const deltaX = endX - this.startX
       if (Math.abs(deltaX) > 50) {
         if (deltaX > 0) {
-          this.prevSlide();
+          this.prevSlide()
         } else {
-          this.nextSlide();
+          this.nextSlide()
         }
       }
     },
     nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.tiles.length;
+      this.currentIndex = (this.currentIndex + 1) % this.tiles.length
     },
     prevSlide() {
-      this.currentIndex = (this.currentIndex - 1 + this.tiles.length) % this.tiles.length;
+      this.currentIndex = (this.currentIndex - 1 + this.tiles.length) % this.tiles.length
     },
     goToSlide(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     },
     startAutoPlay() {
       this.autoPlayInterval = setInterval(() => {
-        this.nextSlide();
-      }, 3000);
+        this.nextSlide()
+      }, 3000)
     },
     pauseAutoPlay() {
       if (this.autoPlayInterval) {
-        clearInterval(this.autoPlayInterval);
-        this.autoPlayInterval = null;
+        clearInterval(this.autoPlayInterval)
+        this.autoPlayInterval = null
       }
-    }
+    },
   },
   mounted() {
-    this.startAutoPlay();
+    this.startAutoPlay()
   },
   beforeUnmount() {
-    this.pauseAutoPlay();
-  }
+    this.pauseAutoPlay()
+  },
 }
 </script>
 

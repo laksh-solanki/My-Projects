@@ -5,11 +5,10 @@
       <div class="hero-content">
         <h1 class="hero-title">Our Tile Services</h1>
         <p class="hero-subtitle">
-          Professional tile installation and flooring solutions for residential and commercial spaces.
+          Professional tile installation and flooring solutions for residential and commercial
+          spaces.
         </p>
-        <v-btn @click="scrollToServices" class="cta-button" size="large">
-          Explore Services
-        </v-btn>
+        <v-btn @click="scrollToServices" class="cta-button" size="large"> Explore Services </v-btn>
       </div>
     </section>
 
@@ -20,7 +19,9 @@
         <div class="services-grid">
           <v-card v-for="service in services" :key="service.id" class="service-card" elevation="4">
             <v-card-text class="text-center">
-              <v-icon size="64" class="service-icon mb-4" color="primary">{{ service.icon }}</v-icon>
+              <v-icon size="64" class="service-icon mb-4" color="primary">{{
+                service.icon
+                }}</v-icon>
               <h3 class="service-title">{{ service.title }}</h3>
               <p class="service-description">{{ service.description }}</p>
             </v-card-text>
@@ -35,7 +36,9 @@
         <h2 class="section-title">Why Choose Our Tile Services?</h2>
         <div class="features-grid">
           <div v-for="feature in features" :key="feature.title" class="feature-item">
-            <v-icon size="48" class="feature-icon mb-3" color="secondary">{{ feature.icon }}</v-icon>
+            <v-icon size="48" class="feature-icon mb-3" color="secondary">{{
+              feature.icon
+              }}</v-icon>
             <h3 class="feature-title">{{ feature.title }}</h3>
             <p class="feature-text">{{ feature.text }}</p>
           </div>
@@ -49,7 +52,9 @@
         <h2 class="section-title">Materials We Work With</h2>
         <div class="materials-grid">
           <div v-for="material in materials" :key="material.name" class="material-item">
-            <v-icon size="40" class="material-icon mb-2" color="primary">{{ material.icon }}</v-icon>
+            <v-icon size="40" class="material-icon mb-2" color="primary">{{
+              material.icon
+              }}</v-icon>
             <h4 class="material-name">{{ material.name }}</h4>
             <p class="material-description">{{ material.description }}</p>
           </div>
@@ -60,16 +65,16 @@
     <!-- Call to Action Section -->
     <section class="cta-section">
       <div class="container text-center">
-        <h2 class="cta-title">Ready to Transform Your Space?</h2>
+        <h2 class="cta-title">Ready to Buy Modern Style Tile?</h2>
         <p class="cta-text">Get a free consultation and estimate for your tile project.</p>
         <v-btn @click="dialog = true" class="cta-button-large" size="x-large">
-          Get Free Quote
+          Contact Us
         </v-btn>
       </div>
     </section>
 
     <!-- Contact Dialog -->
-    <v-dialog v-model="dialog" max-width="600px" >
+    <v-dialog v-model="dialog" max-width="600px">
       <v-card>
         <v-card-title class="text-h5 pb-0 p-3 d-flex justify-end align-center">
           <v-btn icon @click="dialog = false">
@@ -99,37 +104,43 @@ export default {
         {
           id: 1,
           title: 'Tile Installation',
-          description: 'Professional installation of ceramic, porcelain, and natural stone tiles for floors and walls.',
+          description:
+            'Professional installation of ceramic, porcelain, and natural stone tiles for floors and walls.',
           icon: 'mdi-tools',
         },
         {
           id: 2,
           title: 'Flooring Design Consultation',
-          description: 'Expert advice on tile selection, layout patterns, and color schemes for your space.',
+          description:
+            'Expert advice on tile selection, layout patterns, and color schemes for your space.',
           icon: 'mdi-palette-swatch-outline',
         },
         {
           id: 3,
           title: 'Subfloor Preparation',
-          description: 'Proper surface preparation ensuring long-lasting, beautiful tile installations.',
+          description:
+            'Proper surface preparation ensuring long-lasting, beautiful tile installations.',
           icon: 'mdi-floor-plan',
         },
         {
           id: 4,
           title: 'Grouting & Sealing',
-          description: 'Professional grouting and sealing services to protect and enhance your tile investment.',
+          description:
+            'Professional grouting and sealing services to protect and enhance your tile investment.',
           icon: 'mdi-water-off',
         },
         {
           id: 5,
           title: 'Tile Repair & Maintenance',
-          description: 'Repair cracked tiles, replace damaged grout, and maintain your flooring investment.',
+          description:
+            'Repair cracked tiles, replace damaged grout, and maintain your flooring investment.',
           icon: 'mdi-wrench-outline',
         },
         {
           id: 6,
           title: 'Custom Tile Solutions',
-          description: 'Bespoke tile solutions for unique spaces including backsplashes, showers, and accent walls.',
+          description:
+            'Bespoke tile solutions for unique spaces including backsplashes, showers, and accent walls.',
           icon: 'mdi-shape-outline',
         },
       ],
@@ -302,7 +313,9 @@ export default {
 .service-card {
   background: white;
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   height: 100%;
 }
 
