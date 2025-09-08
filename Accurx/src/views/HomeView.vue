@@ -33,45 +33,56 @@ export default {
     <!-- Tile Types Section -->
     <section class="tiles-section">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
-      <div class="tiles-grid">
-        <TileCard
-          imageSrc="/Photos/Til-1.jpeg"
-          title="Elegant Ceramic Tiles"
-          description="Versatile and robust, ideal for both residential and commercial applications."
-          price="$2.50/sq ft"
-        />
-        <TileCard
-          imageSrc="/Photos/Til-2.avif"
-          title="Durable Porcelain Tiles"
-          description="Highly resistant to wear and moisture, perfect for high-traffic areas."
-          price="$3.00/sq ft"
-        />
-        <TileCard
-          imageSrc="/Photos/Til-3.webp"
-          title="Comfortable Vinyl Flooring"
-          description="Affordable, easy to maintain, and comfortable underfoot price and design."
-          price="$1.75/sq ft"
-        />
-      </div>
+      <v-row justify="center" align="stretch" dense>
+        <v-col cols="12" sm="6" md="4" lg="3" xl="3" v-for="(tile, index) in 3" :key="index">
+          <TileCard
+            v-if="index === 0"
+            imageSrc="/Photos/Til-1.jpeg"
+            title="Elegant Ceramic Tiles"
+            description="Versatile and robust, ideal for both residential and commercial applications."
+            price="$2.50/sq ft"
+          />
+          <TileCard
+            v-else-if="index === 1"
+            imageSrc="/Photos/Til-2.avif"
+            title="Durable Porcelain Tiles"
+            description="Highly resistant to wear and moisture, perfect for high-traffic areas."
+            price="$3.00/sq ft"
+          />
+          <TileCard
+            v-else
+            imageSrc="/Photos/Til-3.webp"
+            title="Comfortable Vinyl Flooring"
+            description="Affordable, easy to maintain, and comfortable underfoot price and design."
+            price="$1.75/sq ft"
+          />
+        </v-col>
+      </v-row>
     </section>
 
     <!-- Why Choose Us Section -->
     <section class="why-choose-us-section">
       <h2 class="section-title">Why Partner with Us?</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <h3>Uncompromising Quality</h3>
-          <p>We source only the finest materials from reputable global manufacturers.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Expert Installation</h3>
-          <p>Our certified professionals ensure a precise and lasting installation.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Client Satisfaction</h3>
-          <p>Dedicated to exceeding your expectations from selection to project completion.</p>
-        </div>
-      </div>
+      <v-row justify="center" align="stretch" dense>
+        <v-col cols="12" sm="6" md="4" lg="4" xl="4">
+          <div class="feature-item">
+            <h3>Uncompromising Quality</h3>
+            <p>We source only the finest materials from reputable global manufacturers.</p>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="6" md="4" lg="4" xl="4">
+          <div class="feature-item">
+            <h3>Expert Installation</h3>
+            <p>Our certified professionals ensure a precise and lasting installation.</p>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="6" md="4" lg="4" xl="4">
+          <div class="feature-item">
+            <h3>Client Satisfaction</h3>
+            <p>Dedicated to exceeding your expectations from selection to project completion.</p>
+          </div>
+        </v-col>
+      </v-row>
     </section>
   </div>
 </template>
@@ -176,12 +187,7 @@ section {
   margin: 1rem;
 }
 
-.tiles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-}
+
 
 /* Why Choose Us Section */
 .why-choose-us-section {
@@ -191,14 +197,7 @@ section {
   margin: 1rem;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .feature-item {
   background-color: #f0f0f0;
