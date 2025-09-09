@@ -10,20 +10,21 @@
           <div class="form-step" :class="getFormClasses(0)">
             <form @submit.prevent="submitStep1" class="w-100" novalidate>
               <v-text-field v-model="form.name" label="Name" :rules="[(v) => !!v || 'Name is required']" required
-                outlined dense class="mb-3" />
+                outlined dense class="mb-3" clearable />
               <v-text-field v-model="form.email" label="Email" :rules="[
                 (v) => !!v || 'Email is required',
                 (v) => /.+@.+\..+/.test(v) || 'Email must be valid',
-              ]" required outlined dense class="mb-3" />
+              ]" required outlined dense class="mb-3" clearable />
+              <v-text-field v-model="form.phone" label="Phone" :rules="[(v) => !!v || 'Phone number is required']"
+                required outlined dense class="mb-3" clearable />
               <v-btn :loading="loading" type="submit" color="primary" class="mt-4">Next</v-btn>
-              <v-btn type="reset" color="secondary" class="mt-4 ms-3">Reset</v-btn>
             </form>
           </div>
 
           <div class="form-step" :class="getFormClasses(1)">
-            <form @submit.prevent="submitStep2" novalidate>
+            <form @submit.prevent="submitStep2" class="w-100" novalidate>
               <v-textarea v-model="form.message" label="Message" :rules="[(v) => !!v || 'Message is required']" required
-                outlined dense rows="4" class="mb-3" />
+                outlined dense rows="4" class="mb-3" clearable />
               <div class="d-flex justify-space-between mt-5">
                 <v-btn color="secondary" @click="prevStep">Back</v-btn>
                 <v-btn :loading="loading" type="submit" color="primary">Next</v-btn>
@@ -32,9 +33,9 @@
           </div>
 
           <div class="form-step" :class="getFormClasses(2)">
-            <form @submit.prevent="submitStep3" novalidate>
-              <v-text-field v-model="form.phone" label="Phone" :rules="[(v) => !!v || 'Phone number is required']"
-                required outlined dense class="mb-3" />
+            <form @submit.prevent="submitStep3" class="w-100" novalidate>
+              <v-textarea v-model="form.Address" label="Address" :rules="[(v) => !!v || 'Address is required']"
+                clearable required outlined dense rows="4" class="mb-3"></v-textarea>
               <div class="d-flex justify-space-between mt-5">
                 <v-btn color="secondary" @click="prevStep">Back</v-btn>
                 <v-btn :loading="loading" type="submit" color="primary">Submit</v-btn>
@@ -153,6 +154,7 @@ export default {
       email: '',
       message: '',
       phone: '',
+      Address: '',
     });
     const touchStartX = ref(0);
     const touchEndX = ref(0);
@@ -209,8 +211,16 @@ export default {
     };
 
     const validateStep1 = () => {
-      if (!form.value.name || !form.value.email || !/.+@.+\..+/.test(form.value.email)) {
-        alert('Please enter valid name and email');
+      if (!form.value.name) {
+        alert('Please enter Name')
+        return false; 
+      }
+      else if (!form.value.email || !/.+@.+\..+/.test(form.value.email)) {
+        alert('Please enter valid email');
+        return false;
+      }
+      else if (!form.value.phone || !/^\d{10}$/.test(form.value.phone)) {
+        alert('Please enter a valid 10-digit phone number');
         return false;
       }
       return true;
@@ -225,14 +235,14 @@ export default {
     };
 
     const submitStep3 = async () => {
-      if (!form.value.phone) {
-        alert('Please enter a phone number.');
+      if (!form.value.Address) {
+        alert('Please enter a Address.');
         return;
       }
       loading.value = true;
       try {
         await fetch(
-          'https://script.google.com/macros/s/AKfycbwAKAPVgDd0I2spFEYhcsO0KdqEuDRMZ5uGjawGBb5o6zWZWLRU_AF0wYuc-HVDL8y4/exec',
+          'https://script.google.com/macros/s/AKfycbxUzeCUDobbTZst7MBVv2Ni4u5y2crybrWdzI-84r9ivhN1AVWEMdeDAR1AAlWu914w/exec',
           {
             method: 'POST',
             mode: 'no-cors',
@@ -240,11 +250,11 @@ export default {
             body: JSON.stringify(form.value),
           }
         );
-        form.value = { name: '', email: '', message: '', phone: '' };
+        form.value = { name: '', email: '', message: '', phone: '', Address: '' };
         currentStep.value = 0;
-        successRef.value?.show();
+        successRef.value?.showSnackbar();
       } catch (err) {
-        unsuccessRef.value?.show();
+        unsuccessRef.value?.showSnackbar();
       } finally {
         loading.value = false;
       }
@@ -288,8 +298,7 @@ export default {
 .form-container {
   position: relative;
   width: 100%;
-  max-height: 490px;
-  height: 100%;
+  max-height: 100%;
   overflow: hidden !important;
 }
 
