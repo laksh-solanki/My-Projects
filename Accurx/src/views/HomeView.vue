@@ -34,7 +34,7 @@ export default {
     <section class="tiles-section">
       <h2 class="section-title">Our Diverse Flooring Collections</h2>
       <v-row justify="center" align="stretch" dense>
-        <v-col cols="12" sm="6" md="4" lg="3" xl="3" v-for="(tile, index) in 3" :key="index">
+        <v-col cols="12" sm="6" md="4" lg="4" xl="3" v-for="(tile, index) in 3" :key="index">
           <TileCard
             v-if="index === 0"
             imageSrc="/Photos/Til-1.jpeg"

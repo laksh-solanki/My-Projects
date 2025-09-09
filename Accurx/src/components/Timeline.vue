@@ -40,7 +40,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-bottom: 30px;
+  margin: 10px 10px 30px 10px;
   padding: 1rem;
   background: rgba(26, 26, 26, 0.5);
   border-radius: 8px;
@@ -107,7 +107,7 @@ export default {
   color: #28a745;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .timeline-container {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -123,5 +123,5 @@ export default {
     margin-left: 10px;
     text-align: left;
   }
-}
+} */
 </style>

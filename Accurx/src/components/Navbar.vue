@@ -20,7 +20,7 @@
     </v-container>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" app left>
+  <v-navigation-drawer v-model="drawer" app temporary left>
     <v-list nav dense>
       <v-list-item to="/" @click="drawer = false">
         <v-list-item-icon>

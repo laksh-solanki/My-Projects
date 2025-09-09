@@ -1,132 +1,130 @@
 <template>
   <div class="contact-page">
-    <h1 class="text-center display-4 fw-bold mb-5">Contact Us</h1>
-    <div class="form-section">
-      <div class="form-container contact-form" @touchstart="handleTouchStart" @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd">
-        <Timeline :currentStep="currentStep" />
-        <h2 class="mb-4 text-center">Send Us a Message</h2>
-        <div class="form-step" :class="getFormClasses(0)">
-          <div class="p-4 rounded shadow-lg">
-            <form @submit.prevent="submitStep1" novalidate>
+    <h1 class="text-center display-3 fw-bold my-3 p-4">Contact Us</h1>
+    <v-row>
+      <v-col cols="12" sm="7" class="timeline-container">
+        <v-card class="form-container" @touchstart="handleTouchStart" @touchmove="handleTouchMove"
+          @touchend="handleTouchEnd">
+          <Timeline :currentStep="currentStep" />
+          <h2 class="mb-4 text-center">Send Us a Message</h2>
+          <div class="form-step" :class="getFormClasses(0)">
+            <form @submit.prevent="submitStep1" class="w-100" novalidate>
               <v-text-field v-model="form.name" label="Name" :rules="[(v) => !!v || 'Name is required']" required
-                outlined dense />
+                outlined dense class="mb-3" />
               <v-text-field v-model="form.email" label="Email" :rules="[
                 (v) => !!v || 'Email is required',
                 (v) => /.+@.+\..+/.test(v) || 'Email must be valid',
-              ]" required outlined dense />
+              ]" required outlined dense class="mb-3" />
               <v-btn :loading="loading" type="submit" color="primary" class="mt-4">Next</v-btn>
+              <v-btn type="reset" color="secondary" class="mt-4 ms-3">Reset</v-btn>
             </form>
           </div>
-        </div>
 
-        <div class="form-step" :class="getFormClasses(1)">
-          <div class="p-4 rounded shadow-lg">
+          <div class="form-step" :class="getFormClasses(1)">
             <form @submit.prevent="submitStep2" novalidate>
               <v-textarea v-model="form.message" label="Message" :rules="[(v) => !!v || 'Message is required']" required
-                outlined dense rows="4" />
+                outlined dense rows="4" class="mb-3" />
               <div class="d-flex justify-space-between mt-5">
                 <v-btn color="secondary" @click="prevStep">Back</v-btn>
                 <v-btn :loading="loading" type="submit" color="primary">Next</v-btn>
               </div>
             </form>
           </div>
-        </div>
 
-        <div class="form-step" :class="getFormClasses(2)">
-          <div class="p-4 rounded shadow-lg">
+          <div class="form-step" :class="getFormClasses(2)">
             <form @submit.prevent="submitStep3" novalidate>
               <v-text-field v-model="form.phone" label="Phone" :rules="[(v) => !!v || 'Phone number is required']"
-                required outlined dense />
-              <div class="d-flex justify-space-between">
+                required outlined dense class="mb-3" />
+              <div class="d-flex justify-space-between mt-5">
                 <v-btn color="secondary" @click="prevStep">Back</v-btn>
                 <v-btn :loading="loading" type="submit" color="primary">Submit</v-btn>
               </div>
             </form>
           </div>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="5">
+        <div class="info-section">
+          <v-card class="contact-info pa-4 mb-4" elevation="8">
+            <h2 class="mb-4 text-center">Contact Details</h2>
+            <v-list dense class="transparent">
+              <v-list-item class="mb-2">
+                <v-list-item-icon>
+                  <v-icon color="primary" size="large">mdi-map-marker</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Address:</v-list-item-title>
+                  <v-list-item-subtitle>123 Tile Street, Flooring City, FC 12345</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item class="mb-2">
+                <v-list-item-icon>
+                  <v-icon color="primary" size="large">mdi-phone</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Phone:</v-list-item-title>
+                  <v-list-item-subtitle>+1 (123) 456-7890</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item class="mb-2">
+                <v-list-item-icon>
+                  <v-icon color="primary" size="large">mdi-email</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Email:</v-list-item-title>
+                  <v-list-item-subtitle>info@yourtilecompany.com</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-icon>
+                  <v-icon color="primary" size="large">mdi-clock-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Hours:</v-list-item-title>
+                  <v-list-item-subtitle>Mon - Fri: 9:00 AM - 5:00 PM</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+          <v-card class="contact-info pa-4 mb-4">
+            <v-card-title class="text-center justify-center">
+              <h2 class="text-h5">Why Contact Us?</h2>
+            </v-card-title>
+            <v-card-text>
+              <v-list dense class="transparent">
+                <v-list-item class="mb-2">
+                  <v-list-item-icon>
+                    <v-icon color="success" size="large">mdi-check-circle</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <v-list-item-title>Expert Advice:</v-list-item-title>
+                    <v-list-item-subtitle>Get personalized recommendations for your tiling needs.</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item class="mb-2">
+                  <v-list-item-icon>
+                    <v-icon color="warning" size="large">mdi-lightbulb</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <v-list-item-title>Innovative Solutions:</v-list-item-title>
+                    <v-list-item-subtitle>Discover cutting-edge tiling techniques and materials.</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-icon>
+                    <v-icon color="info" size="large">mdi-chat</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <v-list-item-title>Dedicated Support:</v-list-item-title>
+                    <v-list-item-subtitle>Our team is here to assist you every step of the way.</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-card-text>
+          </v-card>
         </div>
-      </div>
-    </div>
-
-    <div class="info-section">
-      <v-card class="contact-info pa-4 mb-4" elevation="8">
-        <h2 class="mb-4 text-center">Contact Details</h2>
-        <v-list dense class="transparent">
-          <v-list-item class="mb-2">
-            <v-list-item-icon>
-              <v-icon color="primary" size="large">mdi-map-marker</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Address:</v-list-item-title>
-              <v-list-item-subtitle>123 Tile Street, Flooring City, FC 12345</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item class="mb-2">
-            <v-list-item-icon>
-              <v-icon color="primary" size="large">mdi-phone</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Phone:</v-list-item-title>
-              <v-list-item-subtitle>+1 (123) 456-7890</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item class="mb-2">
-            <v-list-item-icon>
-              <v-icon color="primary" size="large">mdi-email</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Email:</v-list-item-title>
-              <v-list-item-subtitle>info@yourtilecompany.com</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon color="primary" size="large">mdi-clock-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Hours:</v-list-item-title>
-              <v-list-item-subtitle>Mon - Fri: 9:00 AM - 5:00 PM</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-card>
-      <v-card class="contact-info pa-4 mb-4" elevation="8">
-        <v-card-title class="text-center justify-center">
-          <h2 class="text-h5">Why Contact Us?</h2>
-        </v-card-title>
-        <v-card-text>
-          <v-list dense class="transparent">
-            <v-list-item class="mb-2">
-              <v-list-item-icon>
-                <v-icon color="success" size="large">mdi-check-circle</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title>Expert Advice:</v-list-item-title>
-                <v-list-item-subtitle>Get personalized recommendations for your tiling needs.</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item class="mb-2">
-              <v-list-item-icon>
-                <v-icon color="warning" size="large">mdi-lightbulb</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title>Innovative Solutions:</v-list-item-title>
-                <v-list-item-subtitle>Discover cutting-edge tiling techniques and materials.</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="info" size="large">mdi-chat</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title>Dedicated Support:</v-list-item-title>
-                <v-list-item-subtitle>Our team is here to assist you every step of the way.</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-card-text>
-      </v-card>
-    </div>
+      </v-col>
+    </v-row>
 
     <Success ref="successRef" />
     <Unsuccess ref="unsuccessRef" />
@@ -194,6 +192,7 @@ export default {
       return {
         active: currentStep.value === stepNumber,
         prev: currentStep.value > stepNumber,
+        'd-none': currentStep.value !== stepNumber,
       };
     };
 
@@ -275,38 +274,29 @@ export default {
   background-color: #000;
   color: #fff;
   min-height: 900px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
   padding: 2rem;
-}
-
-.form-section {
-  grid-column: 1 / 8;
-}
-
-.info-section {
-  grid-column: 8 / 13;
 }
 
 .timeline-container {
   margin-bottom: 2rem;
-  padding: 1rem;
-  background: rgba(26, 26, 26, 0.5);
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-container {
   position: relative;
   width: 100%;
+  max-height: 490px;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .form-step {
-  position: absolute;
   width: 100%;
-  height: 100%;
+  padding: 2rem;
+  overflow: hidden;
   transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
   transform: translateX(100%);
@@ -320,14 +310,6 @@ export default {
 
 .form-step.prev {
   transform: translateX(-100%);
-}
-
-.contact-form {
-  background-color: #1a1a1a;
-  border: 3px solid #333;
-  width: 100%;
-  height: 500px;
-  margin: 0 auto;
 }
 
 .v-btn {
