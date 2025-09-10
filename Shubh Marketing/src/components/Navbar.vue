@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="blue-darken-2" height="70" dark>
+  <v-app-bar app height="70" light elevation="2">
     <v-container class="d-flex align-center">
       <v-toolbar-title>
         <router-link class="navbar-brand w-100" to="/"

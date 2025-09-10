@@ -42,7 +42,7 @@ export default {
   gap: 2rem;
   margin: 10px 10px 30px 10px;
   padding: 1rem;
-  background: rgba(26, 26, 26, 0.5);
+  background: rgba(26, 26, 26, 0.242);
   border-radius: 8px;
 }
 
@@ -56,8 +56,8 @@ export default {
   top: 20px;
   left: 30px;
   right: 30px;
-  height: 2px;
-  background-color: #333;
+  height: 2.5px;
+  background-color: #ffffff;
   z-index: 1;
 }
 
@@ -74,8 +74,8 @@ export default {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;

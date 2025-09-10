@@ -1,13 +1,9 @@
 <template>
   <v-footer class="text-center d-flex flex-column ga-2 py-4" color="indigo-lighten-1">
     <div class="d-flex ga-3">
-      <v-btn
-        v-for="icon in icons"
-        :key="icon"
-        :icon="icon"
-        density="comfortable"
-        variant="text"
-      ></v-btn>
+      <a v-for="item in icons" :key="item.href" :href="item.href" target="_blank" class="mx-2">
+        <font-awesome-icon :icon="item.icon" size="2x" />
+      </a>
     </div>
 
     <v-divider thickness="2" width="50"></v-divider>
@@ -28,11 +24,25 @@
 </template>
 
 <script setup>
-const icons = ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram']
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faFacebook, faTwitter, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faFacebook, faTwitter, faLinkedin, faInstagram)
+
+const icons = [
+  { icon: faFacebook, href: 'https://www.facebook.com/share/172vnzY76W/' },
+  { icon: faXTwitter, href: 'https://www.twitter.com' },
+  { icon: faLinkedin, href: 'https://www.linkedin.com/in/tej-patel-b104432b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+  { icon: faInstagram, href: 'https://www.instagram.com/_tej_patel_7179_?igsh=enNnMng0YTgyMW5u' }
+]
 </script>
 
 <script>
 export default {
   name: 'AppFooter',
+  components: {
+    FontAwesomeIcon
+  }
 }
 </script>

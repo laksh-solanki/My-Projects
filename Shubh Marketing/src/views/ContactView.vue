@@ -4,7 +4,7 @@
     <v-row>
       <v-col cols="12" sm="7" class="timeline-container">
         <v-card class="form-container" @touchstart="handleTouchStart" @touchmove="handleTouchMove"
-          @touchend="handleTouchEnd">
+          @touchend="handleTouchEnd" elevation="2">
           <Timeline :currentStep="currentStep" />
           <h2 class="mb-4 text-center">Send Us a Message</h2>
           <div class="form-step" :class="getFormClasses(0)">
@@ -46,7 +46,7 @@
       </v-col>
       <v-col cols="12" sm="5">
         <div class="info-section">
-          <v-card class="contact-info pa-4 mb-4" elevation="8">
+          <v-card class="contact-info pa-4 mb-4" elevation="2">
             <h2 class="mb-4 text-center">Contact Details</h2>
             <v-list dense class="transparent">
               <v-list-item class="mb-2">
@@ -87,7 +87,7 @@
               </v-list-item>
             </v-list>
           </v-card>
-          <v-card class="contact-info pa-4 mb-4">
+          <v-card class="contact-info pa-4 mb-4" elevation="2"> 
             <v-card-title class="text-center justify-center">
               <h2 class="text-h5">Why Contact Us?</h2>
             </v-card-title>
@@ -281,18 +281,14 @@ export default {
 
 <style scoped>
 .contact-page {
-  background-color: #000;
-  color: #fff;
   min-height: 900px;
   padding: 2rem;
 }
 
 .timeline-container {
   margin-bottom: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  max-height: 850px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-container {

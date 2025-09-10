@@ -50,7 +50,7 @@ export default {
         min-height="400"
         v-bind="props"
         :class="{ 'selected-card': title === selectedName }"
-        elevation="2"
+        elevation="1"
         max-width="360"
       >
         <v-img :aspect-ratio="16 / 9" :src="imageSrc" cover>
